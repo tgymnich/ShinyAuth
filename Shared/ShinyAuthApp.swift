@@ -15,3 +15,9 @@ struct ShinyAuthApp: App {
         }
     }
 }
+
+struct ShinyAuthApp_Previews: PreviewProvider {
+    static var previews: some View {
+        Text("Hello, World!")
+    }
+}

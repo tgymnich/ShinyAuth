@@ -1,0 +1,34 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Base32",
+        "repositoryURL": "https://github.com/norio-nomura/Base32.git",
+        "state": {
+          "branch": null,
+          "revision": "69fc95dd2e4229a2fd82e14d9358c23b0fd8cf74",
+          "version": "0.8.0"
+        }
+      },
+      {
+        "package": "KeychainAccess",
+        "repositoryURL": "https://github.com/kishikawakatsumi/KeychainAccess.git",
+        "state": {
+          "branch": null,
+          "revision": "3d0ea2c0806791abcc5d7f0d9f62f1cfd4a7264d",
+          "version": "4.2.0"
+        }
+      },
+      {
+        "package": "OTPKit",
+        "repositoryURL": "git@github.com:TG908/OTPKit.git",
+        "state": {
+          "branch": null,
+          "revision": "1ecde4d577a82438ec77f2480b2315999fa7de14",
+          "version": "0.0.17"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
