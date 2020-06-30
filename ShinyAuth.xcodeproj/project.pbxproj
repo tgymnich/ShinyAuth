@@ -15,6 +15,10 @@
 		2285E02624AABCAD0028E234 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2285E02324AABCAD0028E234 /* ScannerViewController.swift */; };
 		2285E02724AABCAD0028E234 /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2285E02424AABCAD0028E234 /* ScannerView.swift */; };
 		2285E02824AABCAD0028E234 /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2285E02424AABCAD0028E234 /* ScannerView.swift */; };
+		22EFD05E24ABD16C00A208C2 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EFD05D24ABD16C00A208C2 /* AccountView.swift */; };
+		22EFD05F24ABD16C00A208C2 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EFD05D24ABD16C00A208C2 /* AccountView.swift */; };
+		22EFD06124ABD1CC00A208C2 /* CircularButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EFD06024ABD1CC00A208C2 /* CircularButton.swift */; };
+		22EFD06224ABD1CC00A208C2 /* CircularButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EFD06024ABD1CC00A208C2 /* CircularButton.swift */; };
 		22F2853B24A8E823002FDD8C /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F2853A24A8E823002FDD8C /* Tests_iOS.swift */; };
 		22F2854624A8E823002FDD8C /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F2854524A8E823002FDD8C /* Tests_macOS.swift */; };
 		22F2854824A8E823002FDD8C /* ShinyAuthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F2851F24A8E822002FDD8C /* ShinyAuthApp.swift */; };
@@ -46,6 +50,8 @@
 		22101BF924A8EEB000EFFD78 /* GradientText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientText.swift; sourceTree = "<group>"; };
 		2285E02324AABCAD0028E234 /* ScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		2285E02424AABCAD0028E234 /* ScannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
+		22EFD05D24ABD16C00A208C2 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		22EFD06024ABD1CC00A208C2 /* CircularButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularButton.swift; sourceTree = "<group>"; };
 		22F2851F24A8E822002FDD8C /* ShinyAuthApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShinyAuthApp.swift; sourceTree = "<group>"; };
 		22F2852024A8E822002FDD8C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		22F2852124A8E822002FDD8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -121,6 +127,8 @@
 			children = (
 				22F2851F24A8E822002FDD8C /* ShinyAuthApp.swift */,
 				22F2852024A8E822002FDD8C /* ContentView.swift */,
+				22EFD05D24ABD16C00A208C2 /* AccountView.swift */,
+				22EFD06024ABD1CC00A208C2 /* CircularButton.swift */,
 				22101BF924A8EEB000EFFD78 /* GradientText.swift */,
 				2285E02424AABCAD0028E234 /* ScannerView.swift */,
 				2285E02324AABCAD0028E234 /* ScannerViewController.swift */,
@@ -341,11 +349,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22EFD05E24ABD16C00A208C2 /* AccountView.swift in Sources */,
 				22F2854A24A8E823002FDD8C /* ContentView.swift in Sources */,
 				22F2854824A8E823002FDD8C /* ShinyAuthApp.swift in Sources */,
 				22101BFA24A8EEB000EFFD78 /* GradientText.swift in Sources */,
 				2285E02524AABCAD0028E234 /* ScannerViewController.swift in Sources */,
 				2285E02724AABCAD0028E234 /* ScannerView.swift in Sources */,
+				22EFD06124ABD1CC00A208C2 /* CircularButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,11 +363,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22EFD05F24ABD16C00A208C2 /* AccountView.swift in Sources */,
 				22F2854B24A8E823002FDD8C /* ContentView.swift in Sources */,
 				22F2854924A8E823002FDD8C /* ShinyAuthApp.swift in Sources */,
 				22101BFB24A8EEB000EFFD78 /* GradientText.swift in Sources */,
 				2285E02624AABCAD0028E234 /* ScannerViewController.swift in Sources */,
 				2285E02824AABCAD0028E234 /* ScannerView.swift in Sources */,
+				22EFD06224ABD1CC00A208C2 /* CircularButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

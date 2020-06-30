@@ -109,7 +109,7 @@ final class ScannerViewController: UIViewController, AVCaptureMetadataOutputObje
         guard let url = URL(string: code) else { return }
         let account = Account(from: url)
         try? account?.save(to: keychain)
-        removeFromParent()
+        dismiss(animated: true, completion: nil)
     }
     
     override var prefersStatusBarHidden: Bool {
