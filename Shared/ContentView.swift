@@ -25,8 +25,13 @@ struct ContentView: View {
 
     var body: some View {
         NavigationView {
-            List(accounts) { account in
-                AccountView(account: account)
+            List {
+                ForEach(accounts) { account in
+                    AccountView(account: account)
+                }.onDelete { indexSet in
+                    indexSet.forEach { try? accounts[$0].remove(from: keychain) }
+                    accounts.remove(atOffsets: indexSet)
+                }
             }
             .navigationTitle("Shiny")
             .navigationBarItems(trailing:
