@@ -107,7 +107,7 @@ final class ScannerViewController: UIViewController, AVCaptureMetadataOutputObje
     
     func found(code: String) {
         guard let url = URL(string: code) else { return }
-        let account = Account(from: url)
+        let account = Account<TOTP>(from: url)
         try? account?.save(to: keychain)
         dismiss(animated: true, completion: nil)
     }

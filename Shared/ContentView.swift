@@ -11,7 +11,7 @@ import KeychainAccess
 
 let keychain = Keychain(service: "ch.gymni.test.otpauth")
 
-let sampleAccounts: [Account] = [
+let sampleAccounts: [Account<TOTP>] = [
     Account(label: "tg908@icloud.com", otp: TOTP(algorithm: .sha256, secret: "01234567890".data(using: .ascii)!, digits: 6, period: 3), issuer: "Cloudflare"),
     Account(label: "tg908@icloud.com", otp: TOTP(algorithm: .sha256, secret: "11234567890".data(using: .ascii)!, digits: 6, period: 3), issuer: "Namecheap"),
     Account(label: "tg908@icloud.com", otp: TOTP(algorithm: .sha256, secret: "21234567890".data(using: .ascii)!, digits: 6, period: 3), issuer: "GitHub"),
@@ -20,7 +20,7 @@ let sampleAccounts: [Account] = [
 ]
 
 struct ContentView: View {
-    @State var accounts: [Account] = []
+    @State var accounts: [Account<TOTP>] = []
     @State private var showScanner = false
 
     var body: some View {
@@ -51,7 +51,7 @@ struct ContentView: View {
     }
 
     func reloadAccounts() {
-        guard let keychainAccounts = try? Account.loadAll(from: keychain), !keychainAccounts.isEmpty else { return }
+        guard let keychainAccounts = try? Account<TOTP>.loadAll(from: keychain), !keychainAccounts.isEmpty else { return }
         accounts = keychainAccounts
     }
 }

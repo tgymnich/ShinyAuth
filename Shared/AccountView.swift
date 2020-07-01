@@ -9,7 +9,7 @@ import SwiftUI
 import OTPKit
 
 struct AccountView: View {
-    let account: Account
+    let account: Account<TOTP>
     @State private var currentCode: String = ""
     @State private var progress: CGFloat = 0.0
     @State private var showCopiedMessage = false
@@ -38,7 +38,7 @@ struct AccountView: View {
                         .onAppear {
                             currentCode = account.otpGenerator.code()
                         }
-                        .onReceive(TOTP.TOTPPublisher(totp: account.otpGenerator as! TOTP)) { token in
+                        .onReceive(account.otpGenerator.publisher) { token in
                             currentCode = token.code
                             progress = -0.99
                             withAnimation(.linear(duration: token.timeRemaining)) {
