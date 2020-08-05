@@ -46,8 +46,12 @@ struct AccountView: View {
                             }
                         }
                         .onTapGesture {
-                            let pasteboard = UIPasteboard.general
-                            pasteboard.string = account.otpGenerator.code()
+                            #if os(macOS)
+                            NSPasteboard.general.setString(account.otpGenerator.code(), forType: .string)
+                            #else
+                            UIPasteboard.general.string = account.otpGenerator.code()
+                            #endif
+
                             withAnimation {
                                 showCopiedMessage = true
                             }

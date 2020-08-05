@@ -23,6 +23,24 @@ struct ContentView: View {
     @State var accounts: [Account<TOTP>] = []
     @State private var showScanner = false
 
+    #if os(macOS)
+    var body: some View {
+        NavigationView {
+            List {
+                ForEach(accounts) { account in
+                    AccountView(account: account)
+                }.onDelete { indexSet in
+                    indexSet.forEach { try? accounts[$0].remove(from: keychain) }
+                    accounts.remove(atOffsets: indexSet)
+                }
+            }
+            .navigationTitle("Shiny")
+            .onAppear {
+                reloadAccounts()
+            }
+        }
+    }
+    #else
     var body: some View {
         NavigationView {
             List {
@@ -54,6 +72,7 @@ struct ContentView: View {
             }
         }
     }
+    #endif
 
     func reloadAccounts() {
         guard let keychainAccounts = try? Account<TOTP>.loadAll(from: keychain), !keychainAccounts.isEmpty else { return }
