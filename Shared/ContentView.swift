@@ -22,21 +22,32 @@ let sampleAccounts: [Account<TOTP>] = [
 struct ContentView: View {
     @State var accounts: [Account<TOTP>] = []
     @State private var showScanner = false
-
+    @State private var showNewAccount = false
+    
     #if os(macOS)
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(accounts) { account in
-                    AccountView(account: account)
-                }.onDelete { indexSet in
-                    indexSet.forEach { try? accounts[$0].remove(from: keychain) }
-                    accounts.remove(atOffsets: indexSet)
-                }
+        List {
+            ForEach(accounts) { account in
+                AccountView(account: account)
+            }.onDelete { indexSet in
+                indexSet.forEach { try? accounts[$0].remove(from: keychain) }
+                accounts.remove(atOffsets: indexSet)
             }
-            .navigationTitle("Shiny")
-            .onAppear {
-                reloadAccounts()
+        }
+        .navigationTitle("Shiny")
+        .onAppear {
+            reloadAccounts()
+        }
+        .sheet(isPresented: $showNewAccount) {
+            NewAccountView(showNewAccount: $showNewAccount)
+        }
+        .toolbar {
+            ToolbarItem {
+                Button(action: {
+                    showNewAccount = true
+                }, label: {
+                    Image(systemName: "plus")
+                })
             }
         }
     }
@@ -62,7 +73,7 @@ struct ContentView: View {
                                             reloadAccounts()
                                         }
                                         showScanner = false
-
+                                        
                                     }) {
                                         ScannerView(showScanner: $showScanner)
                                             .edgesIgnoringSafeArea(.bottom)
@@ -73,7 +84,7 @@ struct ContentView: View {
         }
     }
     #endif
-
+    
     func reloadAccounts() {
         guard let keychainAccounts = try? Account<TOTP>.loadAll(from: keychain), !keychainAccounts.isEmpty else { return }
         accounts = keychainAccounts

@@ -20,6 +20,7 @@
 		2265600224B8DF0E00BC8F10 /* Safari.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 22655FEE24B8DF0E00BC8F10 /* Safari.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2285E02524AABCAD0028E234 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2285E02324AABCAD0028E234 /* ScannerViewController.swift */; };
 		2285E02724AABCAD0028E234 /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2285E02424AABCAD0028E234 /* ScannerView.swift */; };
+		229A4B7A24EDCBF50086E88E /* NewAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229A4B7924EDCBF50086E88E /* NewAccountView.swift */; };
 		22EFD05E24ABD16C00A208C2 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EFD05D24ABD16C00A208C2 /* AccountView.swift */; };
 		22EFD05F24ABD16C00A208C2 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EFD05D24ABD16C00A208C2 /* AccountView.swift */; };
 		22EFD06124ABD1CC00A208C2 /* CircularButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EFD06024ABD1CC00A208C2 /* CircularButton.swift */; };
@@ -85,6 +86,7 @@
 		22655FFF24B8DF0E00BC8F10 /* Safari.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Safari.entitlements; sourceTree = "<group>"; };
 		2285E02324AABCAD0028E234 /* ScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		2285E02424AABCAD0028E234 /* ScannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
+		229A4B7924EDCBF50086E88E /* NewAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAccountView.swift; sourceTree = "<group>"; };
 		22EFD05D24ABD16C00A208C2 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		22EFD06024ABD1CC00A208C2 /* CircularButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularButton.swift; sourceTree = "<group>"; };
 		22F2851F24A8E822002FDD8C /* ShinyAuthApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShinyAuthApp.swift; sourceTree = "<group>"; };
@@ -197,8 +199,6 @@
 				22EFD05D24ABD16C00A208C2 /* AccountView.swift */,
 				22EFD06024ABD1CC00A208C2 /* CircularButton.swift */,
 				22101BF924A8EEB000EFFD78 /* GradientText.swift */,
-				2285E02424AABCAD0028E234 /* ScannerView.swift */,
-				2285E02324AABCAD0028E234 /* ScannerViewController.swift */,
 				22F2852124A8E822002FDD8C /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -219,6 +219,8 @@
 		22F2852824A8E822002FDD8C /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				2285E02424AABCAD0028E234 /* ScannerView.swift */,
+				2285E02324AABCAD0028E234 /* ScannerViewController.swift */,
 				22F2852924A8E822002FDD8C /* Info.plist */,
 			);
 			path = iOS;
@@ -227,6 +229,7 @@
 		22F2852F24A8E823002FDD8C /* macOS */ = {
 			isa = PBXGroup;
 			children = (
+				229A4B7924EDCBF50086E88E /* NewAccountView.swift */,
 				22F2853024A8E823002FDD8C /* Info.plist */,
 				22F2853124A8E823002FDD8C /* macOS.entitlements */,
 			);
@@ -474,6 +477,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22EFD05F24ABD16C00A208C2 /* AccountView.swift in Sources */,
+				229A4B7A24EDCBF50086E88E /* NewAccountView.swift in Sources */,
 				22F2854B24A8E823002FDD8C /* ContentView.swift in Sources */,
 				22F2854924A8E823002FDD8C /* ShinyAuthApp.swift in Sources */,
 				22101BFB24A8EEB000EFFD78 /* GradientText.swift in Sources */,
