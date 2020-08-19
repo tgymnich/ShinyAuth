@@ -39,7 +39,7 @@ struct ContentView: View {
             reloadAccounts()
         }
         .sheet(isPresented: $showNewAccount) {
-            NewAccountView(showNewAccount: $showNewAccount)
+            NewAccountView(showNewAccount: $showNewAccount, onDismiss: { reloadAccounts() })
         }
         .toolbar {
             ToolbarItem {
