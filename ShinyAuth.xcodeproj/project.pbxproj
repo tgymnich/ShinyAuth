@@ -18,6 +18,7 @@
 		22655FFA24B8DF0E00BC8F10 /* ToolbarItemIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 22655FF924B8DF0E00BC8F10 /* ToolbarItemIcon.pdf */; };
 		22655FFD24B8DF0E00BC8F10 /* SafariExtensionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22655FFB24B8DF0E00BC8F10 /* SafariExtensionViewController.xib */; };
 		2265600224B8DF0E00BC8F10 /* Safari.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 22655FEE24B8DF0E00BC8F10 /* Safari.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		227958C324EEEBFE00E177ED /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 227958C224EEEBFE00E177ED /* KingfisherSwiftUI */; };
 		2285E02524AABCAD0028E234 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2285E02324AABCAD0028E234 /* ScannerViewController.swift */; };
 		2285E02724AABCAD0028E234 /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2285E02424AABCAD0028E234 /* ScannerView.swift */; };
 		229A4B7A24EDCBF50086E88E /* NewAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229A4B7924EDCBF50086E88E /* NewAccountView.swift */; };
@@ -118,6 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				227958C324EEEBFE00E177ED /* KingfisherSwiftUI in Frameworks */,
 				22101BF524A8E93C00EFFD78 /* OTPKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -289,6 +291,7 @@
 			name = iOS;
 			packageProductDependencies = (
 				22101BF424A8E93C00EFFD78 /* OTPKit */,
+				227958C224EEEBFE00E177ED /* KingfisherSwiftUI */,
 			);
 			productName = iOS;
 			productReference = 22F2852624A8E822002FDD8C /* ShinyAuth.app */;
@@ -391,6 +394,7 @@
 			mainGroup = 22F2851924A8E822002FDD8C;
 			packageReferences = (
 				22101BF324A8E93C00EFFD78 /* XCRemoteSwiftPackageReference "OTPKit" */,
+				227958C124EEEBFE00E177ED /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 22F2852724A8E822002FDD8C /* Products */;
 			projectDirPath = "";
@@ -944,6 +948,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		227958C124EEEBFE00E177ED /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.15.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -956,6 +968,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 22101BF324A8E93C00EFFD78 /* XCRemoteSwiftPackageReference "OTPKit" */;
 			productName = OTPKit;
+		};
+		227958C224EEEBFE00E177ED /* KingfisherSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 227958C124EEEBFE00E177ED /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = KingfisherSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

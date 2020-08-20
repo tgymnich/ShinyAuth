@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import KingfisherSwiftUI
 import OTPKit
 
 struct AccountView: View {
@@ -16,7 +17,20 @@ struct AccountView: View {
 
     var body: some View {
         HStack {
-            Image(systemName: "photo")
+            if let imageURL = account.imageURL {
+                KFImage(imageURL)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 44, height: 44)
+                    .clipped()
+            } else {
+                Image(systemName: "photo")
+                    .resizable()
+                    .frame(width: 44, height: 44)
+                    .clipped()
+
+            }
+
             VStack(alignment: .leading) {
                 if let issuer = account.issuer {
                     Text(issuer)

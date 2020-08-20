@@ -20,6 +20,15 @@
         }
       },
       {
+        "package": "Kingfisher",
+        "repositoryURL": "https://github.com/onevcat/Kingfisher.git",
+        "state": {
+          "branch": null,
+          "revision": "175eeb4618b0a6ef4d69a7409b6a74ddd235a093",
+          "version": "5.15.0"
+        }
+      },
+      {
         "package": "OTPKit",
         "repositoryURL": "git@github.com:TG908/OTPKit.git",
         "state": {
