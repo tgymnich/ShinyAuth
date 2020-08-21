@@ -11,20 +11,21 @@ struct GradientText: View {
     let text: String
     let colors: [Color]
     let progress: CGFloat
+    let kerning: CGFloat
 
-    init(_ text: String, colors: [Color], progress: CGFloat) {
+    init(_ text: String, colors: [Color], progress: CGFloat, kerning: CGFloat = 0.0) {
         self.text = text
         self.colors = colors
         self.progress = progress
+        self.kerning = kerning
     }
-
 
     var body: some View {
         Text(text)
+            .kerning(kerning)
             .foregroundColor(.clear)
             .background(LinearGradient(gradient: Gradient(colors: colors), startPoint: UnitPoint(x: progress, y: 1), endPoint: UnitPoint(x: 1, y: 1)))
-            .mask(Text(text))
-
+            .mask(Text(text).kerning(kerning))
     }
 }
 

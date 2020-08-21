@@ -31,29 +31,29 @@ struct AccountView: View {
 
             }
 
-            VStack(alignment: .leading) {
+            VStack(alignment: .leading, spacing: 2.0) {
                 if let issuer = account.issuer {
                     Text(issuer)
-                        .font(.title3)
+                        .font(.body)
                     Text(account.label)
                         .font(.footnote)
                         .foregroundColor(.secondary)
                 } else {
                     Text(account.label)
-                        .font(.title3)
+                        .font(.body)
                 }
             }
             Spacer()
             VStack {
                 if !showCopiedMessage {
-                    GradientText(currentCode, colors: [.green, .blue], progress: progress)
+                    GradientText(currentCode, colors: [.green, .blue], progress: progress, kerning: 1.0)
                         .font(.title3)
                         .transition(.scale)
                         .onAppear {
-                            currentCode = account.otpGenerator.code()
+                            currentCode = account.otpGenerator.code().group(groupSize: 3)
                         }
                         .onReceive(account.otpGenerator.publisher) { token in
-                            currentCode = token.code
+                            currentCode = token.code.group(groupSize: 3)
                             progress = -0.99
                             withAnimation(.linear(duration: token.timeRemaining)) {
                                 progress = 0.99
@@ -76,7 +76,7 @@ struct AccountView: View {
                             }
                         }
                 } else {
-                    GradientText("copied!", colors: [.yellow, .red, .orange], progress: 0).font(.title3)
+                    GradientText("copied!", colors: [.yellow, .red, .orange], progress: 0).font(.body)
                         .transition(.slide)
                 }
             }
