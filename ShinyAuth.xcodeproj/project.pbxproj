@@ -36,6 +36,8 @@
 		22F2854B24A8E823002FDD8C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F2852024A8E822002FDD8C /* ContentView.swift */; };
 		22F2854C24A8E823002FDD8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22F2852124A8E822002FDD8C /* Assets.xcassets */; };
 		22F2854D24A8E823002FDD8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22F2852124A8E822002FDD8C /* Assets.xcassets */; };
+		594DDABD24F3213B002A603D /* AccountDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594DDABC24F3213B002A603D /* AccountDetail.swift */; };
+		594DDABE24F3213B002A603D /* AccountDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594DDABC24F3213B002A603D /* AccountDetail.swift */; };
 		59BAB36824F2BE7C006E7B1F /* OTPKit in Frameworks */ = {isa = PBXBuildFile; productRef = 59BAB36724F2BE7C006E7B1F /* OTPKit */; };
 		59BAB36C24F2BEF1006E7B1F /* OTPKit in Frameworks */ = {isa = PBXBuildFile; productRef = 59BAB36B24F2BEF1006E7B1F /* OTPKit */; };
 		59BAB37424F2C044006E7B1F /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 59BAB37324F2C044006E7B1F /* KingfisherSwiftUI */; };
@@ -121,6 +123,7 @@
 		22F2854124A8E823002FDD8C /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22F2854524A8E823002FDD8C /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		22F2854724A8E823002FDD8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		594DDABC24F3213B002A603D /* AccountDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +220,7 @@
 				22F2851F24A8E822002FDD8C /* ShinyAuthApp.swift */,
 				22F2852024A8E822002FDD8C /* ContentView.swift */,
 				22EFD05D24ABD16C00A208C2 /* AccountView.swift */,
+				594DDABC24F3213B002A603D /* AccountDetail.swift */,
 				22EFD06024ABD1CC00A208C2 /* CircularButton.swift */,
 				22101BF924A8EEB000EFFD78 /* GradientText.swift */,
 				22228ED424F06FEF008EF527 /* IconView.swift */,
@@ -492,6 +496,7 @@
 				22F2854A24A8E823002FDD8C /* ContentView.swift in Sources */,
 				22F2854824A8E823002FDD8C /* ShinyAuthApp.swift in Sources */,
 				228E9CF824EFD46400016B56 /* Extensions.swift in Sources */,
+				594DDABD24F3213B002A603D /* AccountDetail.swift in Sources */,
 				22228ED524F06FEF008EF527 /* IconView.swift in Sources */,
 				22101BFA24A8EEB000EFFD78 /* GradientText.swift in Sources */,
 				2285E02524AABCAD0028E234 /* ScannerViewController.swift in Sources */,
@@ -505,6 +510,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22EFD05F24ABD16C00A208C2 /* AccountView.swift in Sources */,
+				594DDABE24F3213B002A603D /* AccountDetail.swift in Sources */,
 				229A4B7A24EDCBF50086E88E /* NewAccountView.swift in Sources */,
 				22F2854B24A8E823002FDD8C /* ContentView.swift in Sources */,
 				22F2854924A8E823002FDD8C /* ShinyAuthApp.swift in Sources */,

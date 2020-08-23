@@ -7,6 +7,7 @@
 
 import SwiftUI
 import OTPKit
+import KingfisherSwiftUI
 
 struct NewAccountView: View {
     @Binding var showNewAccount: Bool
@@ -23,9 +24,15 @@ struct NewAccountView: View {
             Text("Add a new Account").font(.title2)
             Spacer()
             VStack(alignment: .leading, spacing: 4) {
-                Text("URL").font(.caption)
+                Text("URL").font(.caption).padding(.leading, 8)
                 TextField("URL", text: $urlString)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
+            }
+            Spacer()
+            if let account = account {
+                AccountDetail(account: .constant(account)).animation(.easeIn)
+            } else {
+                AccountDetail.placeholder
             }
             Spacer()
             HStack {
@@ -38,13 +45,12 @@ struct NewAccountView: View {
                     onDismiss?()
                     showNewAccount = false
                 }, label: {
-                    // TODO: enable button only when url is valid
                     Text("OK")
                 }).disabled(account == nil)
             }
         }
         .padding()
-        .frame(width: 300, height: 200, alignment: .center)
+        .frame(width: 350, height: 250, alignment: .center)
     }
     
     private func save() {
