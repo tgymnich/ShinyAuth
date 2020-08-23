@@ -11,7 +11,7 @@ import OTPKit
 @main
 struct ShinyAuthApp: App {
     
-    @State var accounts: [Account<TOTP>] = sampleAccounts
+    @State var accounts: [Account<TOTP>] = []
     
     var body: some Scene {
         WindowGroup {
