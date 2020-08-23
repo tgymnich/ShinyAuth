@@ -58,7 +58,9 @@ struct AccountView: View {
                         }
                         .onTapGesture {
                             #if os(macOS)
-                            NSPasteboard.general.setString(account.otpGenerator.code(), forType: .string)
+                            let pasteboard = NSPasteboard.general
+                            pasteboard.declareTypes([.string], owner: nil)
+                            pasteboard.setString(account.otpGenerator.code(), forType: .string)
                             #else
                             UIPasteboard.general.string = account.otpGenerator.code()
                             #endif
