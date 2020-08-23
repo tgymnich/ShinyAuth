@@ -22,7 +22,7 @@ struct AccountView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 44, height: 44)
-                    .clipped()
+                    .mask(Circle())
             } else {
                 IconView(text: String(account.issuer?.prefix(2) ?? account.label.prefix(2)))
                     .frame(width: 44, height: 44)

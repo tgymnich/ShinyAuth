@@ -583,7 +583,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				PRODUCT_BUNDLE_IDENTIFIER = ch.gymni.tim.ShinyAuth.Safari;
+				PRODUCT_BUNDLE_IDENTIFIER = ch.gymni.ShinyAuth.Safari;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -605,7 +605,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				PRODUCT_BUNDLE_IDENTIFIER = ch.gymni.tim.ShinyAuth.Safari;
+				PRODUCT_BUNDLE_IDENTIFIER = ch.gymni.ShinyAuth.Safari;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -791,7 +791,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.16;
-				PRODUCT_BUNDLE_IDENTIFIER = ch.gymni.tim.ShinyAuth;
+				PRODUCT_BUNDLE_IDENTIFIER = ch.gymni.ShinyAuth;
 				PRODUCT_NAME = ShinyAuth;
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
@@ -816,7 +816,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.16;
-				PRODUCT_BUNDLE_IDENTIFIER = ch.gymni.tim.ShinyAuth;
+				PRODUCT_BUNDLE_IDENTIFIER = ch.gymni.ShinyAuth;
 				PRODUCT_NAME = ShinyAuth;
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
