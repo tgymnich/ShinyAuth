@@ -24,11 +24,8 @@ struct AccountView: View {
                     .frame(width: 44, height: 44)
                     .clipped()
             } else {
-                Image(systemName: "photo")
-                    .resizable()
+                IconView(text: String(account.issuer?.prefix(2) ?? account.label.prefix(2)))
                     .frame(width: 44, height: 44)
-                    .clipped()
-
             }
 
             VStack(alignment: .leading, spacing: 2.0) {

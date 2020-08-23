@@ -11,6 +11,8 @@
 		22101BF824A8E94600EFFD78 /* OTPKit in Frameworks */ = {isa = PBXBuildFile; productRef = 22101BF724A8E94600EFFD78 /* OTPKit */; };
 		22101BFA24A8EEB000EFFD78 /* GradientText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22101BF924A8EEB000EFFD78 /* GradientText.swift */; };
 		22101BFB24A8EEB000EFFD78 /* GradientText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22101BF924A8EEB000EFFD78 /* GradientText.swift */; };
+		22228ED524F06FEF008EF527 /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22228ED424F06FEF008EF527 /* IconView.swift */; };
+		22228ED624F06FEF008EF527 /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22228ED424F06FEF008EF527 /* IconView.swift */; };
 		22655FF024B8DF0E00BC8F10 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22655FEF24B8DF0E00BC8F10 /* Cocoa.framework */; };
 		22655FF324B8DF0E00BC8F10 /* SafariExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22655FF224B8DF0E00BC8F10 /* SafariExtensionHandler.swift */; };
 		22655FF524B8DF0E00BC8F10 /* SafariExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22655FF424B8DF0E00BC8F10 /* SafariExtensionViewController.swift */; };
@@ -78,6 +80,7 @@
 
 /* Begin PBXFileReference section */
 		22101BF924A8EEB000EFFD78 /* GradientText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientText.swift; sourceTree = "<group>"; };
+		22228ED424F06FEF008EF527 /* IconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
 		22655FEE24B8DF0E00BC8F10 /* Safari.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Safari.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		22655FEF24B8DF0E00BC8F10 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		22655FF224B8DF0E00BC8F10 /* SafariExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionHandler.swift; sourceTree = "<group>"; };
@@ -204,6 +207,7 @@
 				22EFD05D24ABD16C00A208C2 /* AccountView.swift */,
 				22EFD06024ABD1CC00A208C2 /* CircularButton.swift */,
 				22101BF924A8EEB000EFFD78 /* GradientText.swift */,
+				22228ED424F06FEF008EF527 /* IconView.swift */,
 				228E9CF724EFD46400016B56 /* Extensions.swift */,
 				22F2852124A8E822002FDD8C /* Assets.xcassets */,
 			);
@@ -474,6 +478,7 @@
 				22F2854A24A8E823002FDD8C /* ContentView.swift in Sources */,
 				22F2854824A8E823002FDD8C /* ShinyAuthApp.swift in Sources */,
 				228E9CF824EFD46400016B56 /* Extensions.swift in Sources */,
+				22228ED524F06FEF008EF527 /* IconView.swift in Sources */,
 				22101BFA24A8EEB000EFFD78 /* GradientText.swift in Sources */,
 				2285E02524AABCAD0028E234 /* ScannerViewController.swift in Sources */,
 				2285E02724AABCAD0028E234 /* ScannerView.swift in Sources */,
@@ -490,6 +495,7 @@
 				22F2854B24A8E823002FDD8C /* ContentView.swift in Sources */,
 				22F2854924A8E823002FDD8C /* ShinyAuthApp.swift in Sources */,
 				22101BFB24A8EEB000EFFD78 /* GradientText.swift in Sources */,
+				22228ED624F06FEF008EF527 /* IconView.swift in Sources */,
 				22EFD06224ABD1CC00A208C2 /* CircularButton.swift in Sources */,
 				228E9CF924EFD46400016B56 /* Extensions.swift in Sources */,
 			);
