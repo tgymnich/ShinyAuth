@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		22101BF524A8E93C00EFFD78 /* OTPKit in Frameworks */ = {isa = PBXBuildFile; productRef = 22101BF424A8E93C00EFFD78 /* OTPKit */; };
-		22101BF824A8E94600EFFD78 /* OTPKit in Frameworks */ = {isa = PBXBuildFile; productRef = 22101BF724A8E94600EFFD78 /* OTPKit */; };
 		22101BFA24A8EEB000EFFD78 /* GradientText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22101BF924A8EEB000EFFD78 /* GradientText.swift */; };
 		22101BFB24A8EEB000EFFD78 /* GradientText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22101BF924A8EEB000EFFD78 /* GradientText.swift */; };
 		22228ED524F06FEF008EF527 /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22228ED424F06FEF008EF527 /* IconView.swift */; };
@@ -38,6 +36,9 @@
 		22F2854B24A8E823002FDD8C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F2852024A8E822002FDD8C /* ContentView.swift */; };
 		22F2854C24A8E823002FDD8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22F2852124A8E822002FDD8C /* Assets.xcassets */; };
 		22F2854D24A8E823002FDD8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22F2852124A8E822002FDD8C /* Assets.xcassets */; };
+		59BAB36824F2BE7C006E7B1F /* OTPKit in Frameworks */ = {isa = PBXBuildFile; productRef = 59BAB36724F2BE7C006E7B1F /* OTPKit */; };
+		59BAB36C24F2BEF1006E7B1F /* OTPKit in Frameworks */ = {isa = PBXBuildFile; productRef = 59BAB36B24F2BEF1006E7B1F /* OTPKit */; };
+		59BAB37424F2C044006E7B1F /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 59BAB37324F2C044006E7B1F /* KingfisherSwiftUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,16 @@
 				2265600224B8DF0E00BC8F10 /* Safari.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59BAB37024F2BFBA006E7B1F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -126,7 +137,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				227958C324EEEBFE00E177ED /* KingfisherSwiftUI in Frameworks */,
-				22101BF524A8E93C00EFFD78 /* OTPKit in Frameworks */,
+				59BAB36824F2BE7C006E7B1F /* OTPKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,7 +145,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22101BF824A8E94600EFFD78 /* OTPKit in Frameworks */,
+				59BAB37424F2C044006E7B1F /* KingfisherSwiftUI in Frameworks */,
+				59BAB36C24F2BEF1006E7B1F /* OTPKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,8 +310,8 @@
 			);
 			name = iOS;
 			packageProductDependencies = (
-				22101BF424A8E93C00EFFD78 /* OTPKit */,
 				227958C224EEEBFE00E177ED /* KingfisherSwiftUI */,
+				59BAB36724F2BE7C006E7B1F /* OTPKit */,
 			);
 			productName = iOS;
 			productReference = 22F2852624A8E822002FDD8C /* ShinyAuth.app */;
@@ -313,6 +325,7 @@
 				22F2852B24A8E823002FDD8C /* Frameworks */,
 				22F2852C24A8E823002FDD8C /* Resources */,
 				2265600324B8DF0E00BC8F10 /* Embed App Extensions */,
+				59BAB37024F2BFBA006E7B1F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -321,7 +334,8 @@
 			);
 			name = macOS;
 			packageProductDependencies = (
-				22101BF724A8E94600EFFD78 /* OTPKit */,
+				59BAB36B24F2BEF1006E7B1F /* OTPKit */,
+				59BAB37324F2C044006E7B1F /* KingfisherSwiftUI */,
 			);
 			productName = macOS;
 			productReference = 22F2852E24A8E823002FDD8C /* ShinyAuth.app */;
@@ -401,8 +415,8 @@
 			);
 			mainGroup = 22F2851924A8E822002FDD8C;
 			packageReferences = (
-				22101BF324A8E93C00EFFD78 /* XCRemoteSwiftPackageReference "OTPKit" */,
 				227958C124EEEBFE00E177ED /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				59BAB36624F2BE7C006E7B1F /* XCRemoteSwiftPackageReference "OTPKit" */,
 			);
 			productRefGroup = 22F2852724A8E822002FDD8C /* Products */;
 			projectDirPath = "";
@@ -952,14 +966,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		22101BF324A8E93C00EFFD78 /* XCRemoteSwiftPackageReference "OTPKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:TG908/OTPKit.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
 		227958C124EEEBFE00E177ED /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
@@ -968,20 +974,33 @@
 				minimumVersion = 5.15.0;
 			};
 		};
+		59BAB36624F2BE7C006E7B1F /* XCRemoteSwiftPackageReference "OTPKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/TG908/OTPKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		22101BF424A8E93C00EFFD78 /* OTPKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 22101BF324A8E93C00EFFD78 /* XCRemoteSwiftPackageReference "OTPKit" */;
-			productName = OTPKit;
-		};
-		22101BF724A8E94600EFFD78 /* OTPKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 22101BF324A8E93C00EFFD78 /* XCRemoteSwiftPackageReference "OTPKit" */;
-			productName = OTPKit;
-		};
 		227958C224EEEBFE00E177ED /* KingfisherSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 227958C124EEEBFE00E177ED /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = KingfisherSwiftUI;
+		};
+		59BAB36724F2BE7C006E7B1F /* OTPKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 59BAB36624F2BE7C006E7B1F /* XCRemoteSwiftPackageReference "OTPKit" */;
+			productName = OTPKit;
+		};
+		59BAB36B24F2BEF1006E7B1F /* OTPKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 59BAB36624F2BE7C006E7B1F /* XCRemoteSwiftPackageReference "OTPKit" */;
+			productName = OTPKit;
+		};
+		59BAB37324F2C044006E7B1F /* KingfisherSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 227958C124EEEBFE00E177ED /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = KingfisherSwiftUI;

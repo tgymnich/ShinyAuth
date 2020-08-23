@@ -30,11 +30,11 @@
       },
       {
         "package": "OTPKit",
-        "repositoryURL": "git@github.com:TG908/OTPKit.git",
+        "repositoryURL": "https://github.com/TG908/OTPKit",
         "state": {
           "branch": null,
-          "revision": "4b778d6948b776c5bc2d8f3935184c0c24b13e94",
-          "version": "1.0.0"
+          "revision": "f68775809118f185fe7cd0ba2ef1a97f9f602fd3",
+          "version": "1.1.1"
         }
       }
     ]
