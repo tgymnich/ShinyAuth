@@ -19,7 +19,7 @@ struct ShinyAuthApp: App {
                 guard let account = Account<TOTP>(from: url) else { return }
                 try! account.save(to: keychain)
                 accounts.append(account)
-            }
+            }.frame(minWidth: 300, idealWidth: 400, maxWidth: .infinity, minHeight: 200, idealHeight: 500, maxHeight: .infinity, alignment: .center)
         }
     }
 }
