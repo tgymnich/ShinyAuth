@@ -16,7 +16,7 @@ struct AccountView: View {
     @State private var showCopiedMessage = false
 
     var body: some View {
-        HStack {
+        HStack(spacing: 8) {
             if let imageURL = account.imageURL {
                 KFImage(imageURL)
                     .resizable()
@@ -28,7 +28,7 @@ struct AccountView: View {
                     .frame(width: 44, height: 44)
             }
 
-            VStack(alignment: .leading, spacing: 2.0) {
+            VStack(alignment: .leading, spacing: 2) {
                 if let issuer = account.issuer {
                     Text(issuer)
                         .font(.body)
