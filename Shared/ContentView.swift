@@ -20,7 +20,7 @@ let sampleAccounts: [Account<TOTP>] = [
 ]
 
 struct ContentView: View {
-    @State var accounts: [Account<TOTP>] = sampleAccounts
+    @Binding var accounts: [Account<TOTP>]
     @State private var showScanner = false
     @State private var showNewAccount = false
     
@@ -100,6 +100,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(accounts: sampleAccounts)
+        ContentView(accounts: .constant(sampleAccounts))
     }
 }

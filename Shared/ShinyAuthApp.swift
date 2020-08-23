@@ -6,12 +6,20 @@
 //
 
 import SwiftUI
+import OTPKit
 
 @main
 struct ShinyAuthApp: App {
+    
+    @State var accounts: [Account<TOTP>] = sampleAccounts
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(accounts: $accounts).onOpenURL { url in
+                guard let account = Account<TOTP>(from: url) else { return }
+                try! account.save(to: keychain)
+                accounts.append(account)
+            }
         }
     }
 }
