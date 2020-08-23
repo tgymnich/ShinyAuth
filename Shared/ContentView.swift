@@ -29,9 +29,16 @@ struct ContentView: View {
         List {
             ForEach(accounts) { account in
                 AccountView(account: account)
-            }.onDelete { indexSet in
-                indexSet.forEach { try? accounts[$0].remove(from: keychain) }
-                accounts.remove(atOffsets: indexSet)
+                    .contextMenu(
+                        ContextMenu(menuItems: {
+                            Button("Delete", action: {
+                                guard let index = accounts.firstIndex(of: account) else { return }
+                                try? account.remove(from: keychain)
+                                accounts.remove(at: index)
+                            })
+                        }
+                    )
+                )
             }
         }
         .navigationTitle("Shiny")
