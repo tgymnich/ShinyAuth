@@ -26,68 +26,48 @@ struct ContentView: View {
     
     #if os(macOS)
     var body: some View {
-        List {
-            ForEach(accounts) { account in
-                AccountView(account: account)
-                    .contextMenu(
-                        ContextMenu(menuItems: {
-                            Button("Delete", action: {
-                                guard let index = accounts.firstIndex(of: account) else { return }
-                                try? account.remove(from: keychain)
-                                accounts.remove(at: index)
-                            })
-                        }
-                    )
-                )
+        AccountList(accounts: $accounts)
+            .navigationTitle("Shiny")
+            .onAppear {
+                reloadAccounts()
             }
-        }
-        .navigationTitle("Shiny")
-        .onAppear {
-            reloadAccounts()
-        }
-        .sheet(isPresented: $showNewAccount) {
-            NewAccountView(showNewAccount: $showNewAccount, onDismiss: { reloadAccounts() })
-        }
-        .toolbar {
-            ToolbarItem {
-                Button(action: {
-                    showNewAccount = true
-                }, label: {
-                    Image(systemName: "plus")
-                })
+            .sheet(isPresented: $showNewAccount) {
+                NewAccountView(showNewAccount: $showNewAccount, onDismiss: { reloadAccounts() })
             }
-        }
+            .toolbar {
+                ToolbarItem {
+                    Button(action: {
+                        showNewAccount = true
+                    }, label: {
+                        Image(systemName: "plus")
+                    })
+                }
+            }
+        
     }
     #else
     var body: some View {
         NavigationView {
-            List {
-                ForEach(accounts) { account in
-                    AccountView(account: account)
-                }.onDelete { indexSet in
-                    indexSet.forEach { try? accounts[$0].remove(from: keychain) }
-                    accounts.remove(atOffsets: indexSet)
-                }
-            }
-            .navigationTitle("Shiny")
-            .navigationBarItems(trailing:
-                                    CircularButton(systemName: "qrcode")
-                                    .padding(.top, 10)
-                                    .onTapGesture {
-                                        showScanner = true
-                                    }).sheet(isPresented: $showScanner, onDismiss: {
-                                        withAnimation {
-                                            reloadAccounts()
+            AccountList(accounts: $accounts)
+                .navigationTitle("Shiny")
+                .navigationBarItems(trailing:
+                                        CircularButton(systemName: "qrcode")
+                                        .padding(.top, 10)
+                                        .onTapGesture {
+                                            showScanner = true
+                                        }).sheet(isPresented: $showScanner, onDismiss: {
+                                            withAnimation {
+                                                reloadAccounts()
+                                            }
+                                            showScanner = false
+                                            
+                                        }) {
+                                            ScannerView(showScanner: $showScanner)
+                                                .edgesIgnoringSafeArea(.bottom)
                                         }
-                                        showScanner = false
-                                        
-                                    }) {
-                                        ScannerView(showScanner: $showScanner)
-                                            .edgesIgnoringSafeArea(.bottom)
-                                    }
-            .onAppear {
-                reloadAccounts()
-            }
+                .onAppear {
+                    reloadAccounts()
+                }
         }.navigationViewStyle(StackNavigationViewStyle())
     }
     #endif
@@ -100,6 +80,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(accounts: .constant(sampleAccounts))
+        ContentView(accounts: .constant([]))
     }
 }
