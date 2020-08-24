@@ -123,6 +123,7 @@
 		22F2854124A8E823002FDD8C /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22F2854524A8E823002FDD8C /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		22F2854724A8E823002FDD8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		593F689024F3D9FA00007D5A /* ShinyAuth.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShinyAuth.entitlements; sourceTree = "<group>"; };
 		594DDABC24F3213B002A603D /* AccountDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -245,6 +246,7 @@
 		22F2852824A8E822002FDD8C /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				593F689024F3D9FA00007D5A /* ShinyAuth.entitlements */,
 				2285E02424AABCAD0028E234 /* ScannerView.swift */,
 				2285E02324AABCAD0028E234 /* ScannerViewController.swift */,
 				22F2852924A8E822002FDD8C /* Info.plist */,
@@ -733,6 +735,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = iOS/ShinyAuth.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4PHTS536MV;
 				ENABLE_PREVIEWS = YES;
@@ -742,7 +745,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ch.gymni.tim.ShinyAuth;
+				PRODUCT_BUNDLE_IDENTIFIER = ch.gymni.ShinyAuth;
 				PRODUCT_NAME = ShinyAuth;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
@@ -755,6 +758,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = iOS/ShinyAuth.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4PHTS536MV;
 				ENABLE_PREVIEWS = YES;
@@ -764,7 +768,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ch.gymni.tim.ShinyAuth;
+				PRODUCT_BUNDLE_IDENTIFIER = ch.gymni.ShinyAuth;
 				PRODUCT_NAME = ShinyAuth;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
