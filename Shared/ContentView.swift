@@ -88,7 +88,7 @@ struct ContentView: View {
             .onAppear {
                 reloadAccounts()
             }
-        }
+        }.navigationViewStyle(StackNavigationViewStyle())
     }
     #endif
     
