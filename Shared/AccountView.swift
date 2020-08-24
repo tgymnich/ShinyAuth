@@ -56,6 +56,9 @@ struct AccountView: View {
                                 progress = 0.99
                             }
                         }
+                        .onDrag {
+                            return NSItemProvider(object: account.otpGenerator.code() as NSString)
+                        }
                         .onTapGesture {
                             #if os(macOS)
                             let pasteboard = NSPasteboard.general
