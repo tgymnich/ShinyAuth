@@ -10,6 +10,8 @@ import OTPKit
 import KeychainAccess
 
 let keychain = Keychain(service: "ch.gymni.shiny-auth")
+    .synchronizable(true)
+    .accessibility(.afterFirstUnlock)
 
 let sampleAccounts: [Account<TOTP>] = [
     Account(label: "tg908@icloud.com", otp: TOTP(algorithm: .sha256, secret: "01234567890".data(using: .ascii)!, digits: 6, period: 3), issuer: "Cloudflare", imageURL: URL(string: "https://cdn.dribbble.com/users/103075/screenshots/622214/dribbble-simplified-cloud.png")),
