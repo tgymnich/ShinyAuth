@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct IconView: View {
-
     @State var text: String = ""
 
     var body: some View {
