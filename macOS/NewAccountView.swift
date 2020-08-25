@@ -15,7 +15,7 @@ struct NewAccountView: View {
     private var accountURL: URL? { URL(string: urlString)?.standardized }
     private var account: Account<TOTP>? {
         guard let url = accountURL else { return nil }
-        return Account(from: url)
+        return try? Account(from: url)
     }
     let onDismiss: (() -> Void)?
     
