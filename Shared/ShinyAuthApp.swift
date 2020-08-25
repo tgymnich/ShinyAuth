@@ -10,7 +10,6 @@ import OTPKit
 
 @main
 struct ShinyAuthApp: App {
-    
     @State var accounts: [Account<TOTP>] = []
     
     var body: some Scene {

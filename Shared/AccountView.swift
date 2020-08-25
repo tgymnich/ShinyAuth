@@ -66,6 +66,8 @@ struct AccountView: View {
                             pasteboard.setString(account.otpGenerator.code(), forType: .string)
                             #else
                             UIPasteboard.general.string = account.otpGenerator.code()
+                            let generator = UINotificationFeedbackGenerator()
+                            generator.notificationOccurred(.success)
                             #endif
 
                             withAnimation {
