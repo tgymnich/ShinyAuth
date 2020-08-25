@@ -21,60 +21,49 @@ let sampleAccounts: [Account<TOTP>] = [
 
 struct ContentView: View {
     @Binding var accounts: [Account<TOTP>]
-    @State private var showScanner = false
     @State private var showNewAccount = false
     
-    #if os(macOS)
     var body: some View {
+        NavigationViewWrapper {
         AccountList(accounts: $accounts)
             .navigationTitle("Shiny")
             .onAppear {
                 reloadAccounts()
             }
             .sheet(isPresented: $showNewAccount) {
-                NewAccountView(showNewAccount: $showNewAccount, onDismiss: { reloadAccounts() })
+                reloadAccounts()
+                showNewAccount = false
+            } content: {
+                #if os(iOS)
+                ScannerView(showScanner: $showNewAccount).edgesIgnoringSafeArea(.bottom)
+                #else
+                NewAccountView(showNewAccount: $showNewAccount) {
+                    reloadAccounts()
+                }
+                #endif
+            }
             }
             .toolbar {
                 ToolbarItem {
-                    Button(action: {
+                    Button {
                         showNewAccount = true
-                    }, label: {
+                    } label: {
+                        #if os(iOS)
+                        Image(systemName: "qrcode")
+                        #else
                         Image(systemName: "plus")
-                    })
+                        #endif
+                    }
                 }
             }
-        
+        }
     }
-    #else
-    var body: some View {
-        NavigationView {
-            AccountList(accounts: $accounts)
-                .navigationTitle("Shiny")
-                .navigationBarItems(trailing:
-                                        CircularButton(systemName: "qrcode")
-                                        .padding(.top, 10)
-                                        .onTapGesture {
-                                            showScanner = true
-                                        }).sheet(isPresented: $showScanner, onDismiss: {
-                                            withAnimation {
-                                                reloadAccounts()
-                                            }
-                                            showScanner = false
-                                            
-                                        }) {
-                                            ScannerView(showScanner: $showScanner)
-                                                .edgesIgnoringSafeArea(.bottom)
-                                        }
-                .onAppear {
-                    reloadAccounts()
-                }
-        }.navigationViewStyle(StackNavigationViewStyle())
-    }
-    #endif
     
     func reloadAccounts() {
         guard let keychainAccounts = try? Account<TOTP>.loadAll(from: keychain), !keychainAccounts.isEmpty else { return }
-        accounts = keychainAccounts
+        withAnimation {
+            accounts = keychainAccounts
+        }
     }
 }
 

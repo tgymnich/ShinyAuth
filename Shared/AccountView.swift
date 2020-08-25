@@ -80,7 +80,8 @@ struct AccountView: View {
                             }
                         }
                 } else {
-                    GradientText("copied!", colors: [.yellow, .red, .orange], progress: 0).font(.body)
+                    GradientText("copied!", colors: [.yellow, .red, .orange], progress: 0)
+                        .font(.body)
                         .transition(.slide)
                 }
             }

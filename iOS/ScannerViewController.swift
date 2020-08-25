@@ -18,13 +18,10 @@ final class ScannerViewController: UIViewController, AVCaptureMetadataOutputObje
     
     func makeUIViewController(context: Context) -> ScannerViewController {
         let viewController = ScannerViewController()
-        
         return viewController
-        
     }
     
     func updateUIViewController(_ uiViewController: ScannerViewController, context: UIViewControllerRepresentableContext<ScannerViewController>) {
-        
     }
     
     override func viewDidLoad() {

@@ -17,16 +17,16 @@ struct AccountList: View {
                 ForEach(accounts) { account in
                     AccountView(account: account)
                         .contextMenu(
-                            ContextMenu(menuItems: {
-                                Button("Delete", action: {
+                            ContextMenu {
+                                Button("Delete") {
                                     guard let index = accounts.firstIndex(of: account) else { return }
                                     try? account.remove(from: keychain)
                                     accounts.remove(at: index)
-                                })
+                                }
                             }
                         )
-                    )
-                }.onDelete { indexSet in
+                }
+                .onDelete { indexSet in
                     indexSet.forEach { try? accounts[$0].remove(from: keychain) }
                     accounts.remove(atOffsets: indexSet)
                 }

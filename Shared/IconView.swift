@@ -12,7 +12,8 @@ struct IconView: View {
 
     var body: some View {
         ZStack {
-            Circle().fill(Color.blue)
+            Circle()
+                .fill(Color.blue)
                 .hueRotation(Angle(degrees: Double.random(in: 0..<360)))
             Text(text)
                 .foregroundColor(.white)

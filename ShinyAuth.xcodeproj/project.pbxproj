@@ -40,6 +40,8 @@
 		593566FF24F46E3A0004448E /* AccountList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593566FD24F46E3A0004448E /* AccountList.swift */; };
 		594DDABD24F3213B002A603D /* AccountDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594DDABC24F3213B002A603D /* AccountDetail.swift */; };
 		594DDABE24F3213B002A603D /* AccountDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594DDABC24F3213B002A603D /* AccountDetail.swift */; };
+		594F993E24F5B1CD00B6EB71 /* NavigationViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594F993D24F5B1CD00B6EB71 /* NavigationViewWrapper.swift */; };
+		594F993F24F5B1CD00B6EB71 /* NavigationViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594F993D24F5B1CD00B6EB71 /* NavigationViewWrapper.swift */; };
 		59BAB36824F2BE7C006E7B1F /* OTPKit in Frameworks */ = {isa = PBXBuildFile; productRef = 59BAB36724F2BE7C006E7B1F /* OTPKit */; };
 		59BAB36C24F2BEF1006E7B1F /* OTPKit in Frameworks */ = {isa = PBXBuildFile; productRef = 59BAB36B24F2BEF1006E7B1F /* OTPKit */; };
 		59BAB37424F2C044006E7B1F /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 59BAB37324F2C044006E7B1F /* KingfisherSwiftUI */; };
@@ -128,6 +130,7 @@
 		593566FD24F46E3A0004448E /* AccountList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountList.swift; sourceTree = "<group>"; };
 		593F689024F3D9FA00007D5A /* ShinyAuth.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShinyAuth.entitlements; sourceTree = "<group>"; };
 		594DDABC24F3213B002A603D /* AccountDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetail.swift; sourceTree = "<group>"; };
+		594F993D24F5B1CD00B6EB71 /* NavigationViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +226,7 @@
 			children = (
 				22F2851F24A8E822002FDD8C /* ShinyAuthApp.swift */,
 				22F2852024A8E822002FDD8C /* ContentView.swift */,
+				594F993D24F5B1CD00B6EB71 /* NavigationViewWrapper.swift */,
 				593566FD24F46E3A0004448E /* AccountList.swift */,
 				22EFD05D24ABD16C00A208C2 /* AccountView.swift */,
 				594DDABC24F3213B002A603D /* AccountDetail.swift */,
@@ -506,6 +510,7 @@
 				593566FE24F46E3A0004448E /* AccountList.swift in Sources */,
 				22228ED524F06FEF008EF527 /* IconView.swift in Sources */,
 				22101BFA24A8EEB000EFFD78 /* GradientText.swift in Sources */,
+				594F993E24F5B1CD00B6EB71 /* NavigationViewWrapper.swift in Sources */,
 				2285E02524AABCAD0028E234 /* ScannerViewController.swift in Sources */,
 				2285E02724AABCAD0028E234 /* ScannerView.swift in Sources */,
 				22EFD06124ABD1CC00A208C2 /* CircularButton.swift in Sources */,
@@ -519,6 +524,7 @@
 				22EFD05F24ABD16C00A208C2 /* AccountView.swift in Sources */,
 				594DDABE24F3213B002A603D /* AccountDetail.swift in Sources */,
 				229A4B7A24EDCBF50086E88E /* NewAccountView.swift in Sources */,
+				594F993F24F5B1CD00B6EB71 /* NavigationViewWrapper.swift in Sources */,
 				22F2854B24A8E823002FDD8C /* ContentView.swift in Sources */,
 				22F2854924A8E823002FDD8C /* ShinyAuthApp.swift in Sources */,
 				593566FF24F46E3A0004448E /* AccountList.swift in Sources */,
