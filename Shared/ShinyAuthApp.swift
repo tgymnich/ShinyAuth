@@ -7,25 +7,19 @@
 
 import SwiftUI
 import OTPKit
+import KeychainAccess
+
+let keychain = Keychain(service: "ch.gymni.shiny-auth")
+    .synchronizable(true)
+    .accessibility(.afterFirstUnlock)
 
 @main
 struct ShinyAuthApp: App {
-    @State var accounts: [Account<TOTP>] = []
     
     var body: some Scene {
         WindowGroup {
-            ContentView(accounts: $accounts).onOpenURL { url in
-                guard let account = Account<TOTP>(from: url) else { return }
-                try! account.save(to: keychain)
-                accounts.append(account)
-            }.frame(minWidth: 300, idealWidth: 400, maxWidth: .infinity, minHeight: 200, idealHeight: 500, maxHeight: .infinity, alignment: .center)
-                    do {
-                        let account = try Account<TOTP>(from: url)
-                        try account.save(to: keychain)
-                        accounts.append(account)
-                    } catch let error {
-                    }
-                }
+            ContentView()
+                .frame(minWidth: 300, idealWidth: 400, maxWidth: .infinity, minHeight: 200, idealHeight: 500, maxHeight: .infinity, alignment: .center)
         }
     }
 }

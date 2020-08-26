@@ -17,7 +17,7 @@ struct NewAccountView: View {
         guard let url = accountURL else { return nil }
         return try? Account(from: url)
     }
-    let onDismiss: (() -> Void)?
+    var onDismiss: ((Account<TOTP>) -> Void)?
     
     var body: some View {
         VStack {
@@ -37,31 +37,24 @@ struct NewAccountView: View {
             Spacer()
             HStack {
                 Spacer()
-                Button {
+                Button("Cancel") {
                     showNewAccount = false
-                } label: {
-                    Text("Cancel")
                 }
-                Button {
-                    save()
-                    onDismiss?()
+                Button("OK") {
+                    if let account = account {
+                        onDismiss?(account)
+                    }
                     showNewAccount = false
-                } label: {
-                    Text("OK")
                 }.disabled(account == nil)
             }
         }
         .padding()
         .frame(width: 350, height: 250, alignment: .center)
     }
-    
-    private func save() {
-        try! account?.save(to: keychain)
-    }
 }
 
 struct NewAccountView_Previews: PreviewProvider {
     static var previews: some View {
-        NewAccountView(showNewAccount: .constant(true), onDismiss: {})
+        NewAccountView(showNewAccount: .constant(true))
     }
 }

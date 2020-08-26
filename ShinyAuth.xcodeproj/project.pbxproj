@@ -36,8 +36,12 @@
 		22F2854B24A8E823002FDD8C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F2852024A8E822002FDD8C /* ContentView.swift */; };
 		22F2854C24A8E823002FDD8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22F2852124A8E822002FDD8C /* Assets.xcassets */; };
 		22F2854D24A8E823002FDD8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22F2852124A8E822002FDD8C /* Assets.xcassets */; };
+		5908383F24F5D71A00AEC7E8 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5908383E24F5D71A00AEC7E8 /* ViewModel.swift */; };
+		5908384024F5D71A00AEC7E8 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5908383E24F5D71A00AEC7E8 /* ViewModel.swift */; };
 		593566FE24F46E3A0004448E /* AccountList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593566FD24F46E3A0004448E /* AccountList.swift */; };
 		593566FF24F46E3A0004448E /* AccountList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593566FD24F46E3A0004448E /* AccountList.swift */; };
+		5935670124F471850004448E /* ErrorAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5935670024F471850004448E /* ErrorAlert.swift */; };
+		5935670224F471850004448E /* ErrorAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5935670024F471850004448E /* ErrorAlert.swift */; };
 		594DDABD24F3213B002A603D /* AccountDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594DDABC24F3213B002A603D /* AccountDetail.swift */; };
 		594DDABE24F3213B002A603D /* AccountDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594DDABC24F3213B002A603D /* AccountDetail.swift */; };
 		594F993E24F5B1CD00B6EB71 /* NavigationViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594F993D24F5B1CD00B6EB71 /* NavigationViewWrapper.swift */; };
@@ -127,7 +131,9 @@
 		22F2854124A8E823002FDD8C /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22F2854524A8E823002FDD8C /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		22F2854724A8E823002FDD8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5908383E24F5D71A00AEC7E8 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		593566FD24F46E3A0004448E /* AccountList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountList.swift; sourceTree = "<group>"; };
+		5935670024F471850004448E /* ErrorAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorAlert.swift; sourceTree = "<group>"; };
 		593F689024F3D9FA00007D5A /* ShinyAuth.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShinyAuth.entitlements; sourceTree = "<group>"; };
 		594DDABC24F3213B002A603D /* AccountDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetail.swift; sourceTree = "<group>"; };
 		594F993D24F5B1CD00B6EB71 /* NavigationViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewWrapper.swift; sourceTree = "<group>"; };
@@ -226,7 +232,6 @@
 			children = (
 				22F2851F24A8E822002FDD8C /* ShinyAuthApp.swift */,
 				22F2852024A8E822002FDD8C /* ContentView.swift */,
-				594F993D24F5B1CD00B6EB71 /* NavigationViewWrapper.swift */,
 				593566FD24F46E3A0004448E /* AccountList.swift */,
 				22EFD05D24ABD16C00A208C2 /* AccountView.swift */,
 				594DDABC24F3213B002A603D /* AccountDetail.swift */,
@@ -234,6 +239,9 @@
 				22101BF924A8EEB000EFFD78 /* GradientText.swift */,
 				22228ED424F06FEF008EF527 /* IconView.swift */,
 				228E9CF724EFD46400016B56 /* Extensions.swift */,
+				5935670024F471850004448E /* ErrorAlert.swift */,
+				594F993D24F5B1CD00B6EB71 /* NavigationViewWrapper.swift */,
+				5908383E24F5D71A00AEC7E8 /* ViewModel.swift */,
 				22F2852124A8E822002FDD8C /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -508,7 +516,9 @@
 				228E9CF824EFD46400016B56 /* Extensions.swift in Sources */,
 				594DDABD24F3213B002A603D /* AccountDetail.swift in Sources */,
 				593566FE24F46E3A0004448E /* AccountList.swift in Sources */,
+				5908383F24F5D71A00AEC7E8 /* ViewModel.swift in Sources */,
 				22228ED524F06FEF008EF527 /* IconView.swift in Sources */,
+				5935670124F471850004448E /* ErrorAlert.swift in Sources */,
 				22101BFA24A8EEB000EFFD78 /* GradientText.swift in Sources */,
 				594F993E24F5B1CD00B6EB71 /* NavigationViewWrapper.swift in Sources */,
 				2285E02524AABCAD0028E234 /* ScannerViewController.swift in Sources */,
@@ -527,11 +537,13 @@
 				594F993F24F5B1CD00B6EB71 /* NavigationViewWrapper.swift in Sources */,
 				22F2854B24A8E823002FDD8C /* ContentView.swift in Sources */,
 				22F2854924A8E823002FDD8C /* ShinyAuthApp.swift in Sources */,
+				5908384024F5D71A00AEC7E8 /* ViewModel.swift in Sources */,
 				593566FF24F46E3A0004448E /* AccountList.swift in Sources */,
 				22101BFB24A8EEB000EFFD78 /* GradientText.swift in Sources */,
 				22228ED624F06FEF008EF527 /* IconView.swift in Sources */,
 				22EFD06224ABD1CC00A208C2 /* CircularButton.swift in Sources */,
 				228E9CF924EFD46400016B56 /* Extensions.swift in Sources */,
+				5935670224F471850004448E /* ErrorAlert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
