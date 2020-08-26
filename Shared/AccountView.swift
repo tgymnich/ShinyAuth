@@ -24,7 +24,7 @@ struct AccountView: View {
                     .frame(width: 44, height: 44)
                     .mask(Circle())
             } else {
-                IconView(text: String(account.issuer?.prefix(2) ?? account.label.prefix(2)))
+                IconView(text: account.issuer ?? account.label)
                     .frame(width: 44, height: 44)
             }
 
