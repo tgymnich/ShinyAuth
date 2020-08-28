@@ -4,5 +4,10 @@
 <dict>
 	<key>com.apple.security.app-sandbox</key>
 	<true/>
+	<key>keychain-access-groups</key>
+	<array>
+		<string>$(AppIdentifierPrefix)ch.gymni.ShinyAuth</string>
+		<string>$(AppIdentifierPrefix)ch.gymni.Test.ShinyAuth.Safari</string>
+	</array>
 </dict>
 </plist>

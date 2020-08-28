@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Safari.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 		<key>iOS.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
@@ -17,6 +22,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>22655FED24B8DF0E00BC8F10</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>22F2852D24A8E823002FDD8C</key>
 		<dict>
 			<key>primary</key>
