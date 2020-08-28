@@ -7,11 +7,7 @@
 
 import SwiftUI
 import OTPKit
-import KeychainAccess
 
-let keychain = Keychain(service: "ch.gymni.shiny-auth")
-    .synchronizable(true)
-    .accessibility(.afterFirstUnlock)
 
 @main
 struct ShinyAuthApp: App {
