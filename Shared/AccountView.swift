@@ -44,7 +44,7 @@ struct AccountView: View {
             VStack {
                 if !showCopiedMessage {
                     GradientText(currentCode, colors: [.green, .blue], progress: progress, kerning: 1.0)
-                        .font(.title3)
+                        .font(.title2)
                         .transition(.scale)
                         .onAppear {
                             currentCode = account.otpGenerator.code().group(groupSize: 3)
