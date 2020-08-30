@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>ShinyAuth Extension</string>
+	<string>ShinyAuth</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -44,7 +44,7 @@
 			<key>Image</key>
 			<string>ToolbarItemIcon.pdf</string>
 			<key>Label</key>
-			<string>Your Button</string>
+			<string>Show OTP tokens</string>
 		</dict>
 		<key>SFSafariWebsiteAccess</key>
 		<dict>
@@ -53,6 +53,6 @@
 		</dict>
 	</dict>
 	<key>NSHumanReadableDescription</key>
-	<string>Show OTP codes and automatically fill out OTP forms.</string>
+	<string>Show OTP codes and fill out OTP forms.</string>
 </dict>
 </plist>

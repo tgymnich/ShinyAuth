@@ -18,6 +18,7 @@ struct ContentView: View {
             }
         }
         .padding()
+        .background(Color.white.opacity(0.3))
         .onReceive(NotificationCenter.default.publisher(for: .didNavigate).receive(on: RunLoop.main)) {
             guard let url = $0.userInfo?["url"] as? URL else { return }
             viewModel.filterAccounts(with: url)

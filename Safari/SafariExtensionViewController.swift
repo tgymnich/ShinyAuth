@@ -11,8 +11,8 @@ import SwiftUI
 
 final class SafariExtensionViewController: SFSafariExtensionViewController {
     let viewModel = ViewModel()
-    lazy var contentView = ContentView(viewModel: viewModel)
-    lazy var swiftUI = NSHostingView(rootView: contentView)
+    private lazy var contentView = ContentView(viewModel: viewModel)
+    private lazy var swiftUI = NSHostingView(rootView: contentView)
     
     override func viewDidLoad() {
         super.viewDidLoad()
