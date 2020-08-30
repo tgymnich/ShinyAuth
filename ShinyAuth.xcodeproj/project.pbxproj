@@ -37,6 +37,7 @@
 		22F2854D24A8E823002FDD8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22F2852124A8E822002FDD8C /* Assets.xcassets */; };
 		5908383F24F5D71A00AEC7E8 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5908383E24F5D71A00AEC7E8 /* ViewModel.swift */; };
 		5908384024F5D71A00AEC7E8 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5908383E24F5D71A00AEC7E8 /* ViewModel.swift */; };
+		5915406124FC051700BAF1EA /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = 5915406024FC051700BAF1EA /* style.css */; };
 		593566FE24F46E3A0004448E /* AccountList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593566FD24F46E3A0004448E /* AccountList.swift */; };
 		593566FF24F46E3A0004448E /* AccountList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593566FD24F46E3A0004448E /* AccountList.swift */; };
 		5935670124F471850004448E /* ErrorAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5935670024F471850004448E /* ErrorAlert.swift */; };
@@ -160,6 +161,7 @@
 		22F2854524A8E823002FDD8C /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		22F2854724A8E823002FDD8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5908383E24F5D71A00AEC7E8 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		5915406024FC051700BAF1EA /* style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
 		593566FD24F46E3A0004448E /* AccountList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountList.swift; sourceTree = "<group>"; };
 		5935670024F471850004448E /* ErrorAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorAlert.swift; sourceTree = "<group>"; };
 		593F689024F3D9FA00007D5A /* ShinyAuth.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShinyAuth.entitlements; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 			children = (
 				223DBF8F24FB3DD90066F775 /* ToolbarItemIcon.pdf */,
 				22655FF724B8DF0E00BC8F10 /* script.js */,
+				5915406024FC051700BAF1EA /* style.css */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -497,6 +500,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				223DBF9024FB3DD90066F775 /* ToolbarItemIcon.pdf in Resources */,
+				5915406124FC051700BAF1EA /* style.css in Resources */,
 				22655FFD24B8DF0E00BC8F10 /* SafariExtensionViewController.xib in Resources */,
 				22655FF824B8DF0E00BC8F10 /* script.js in Resources */,
 			);

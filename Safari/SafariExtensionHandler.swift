@@ -8,6 +8,40 @@
 import SafariServices
 
 final class SafariExtensionHandler: SFSafariExtensionHandler {
+    
+    enum Message: String, CaseIterable {
+        case getToken = "getToken"
+    }
+    
+    enum Event {
+        case credentials(token: String)
+        
+        var name: String {
+            switch self {
+            case .credentials: return "credentials"
+            }
+        }
+        
+        var userInfo: [String: Any]? {
+            switch self {
+            case .credentials(let token): return ["token": token]
+            }
+        }
+    }
+    
+    override func messageReceived(withName messageName: String, from page: SFSafariPage, userInfo: [String : Any]? = nil) {
+        switch Message(rawValue: messageName) {
+        case .getToken:
+            page.getPropertiesWithCompletionHandler { properties in
+                guard let url = properties?.url else { return }
+                let accounts = try? SafariExtensionViewController.shared.viewModel.accounts(for: url)
+                if let token = accounts?.first?.otpGenerator.code() {
+                    page.dispatchMessageToScript(Event.credentials(token: token.group(groupSize: 3)))
+                }
+            }
+        default: break
+        }
+    }
         
     override func popoverWillShow(in window: SFSafariWindow) {
         window.getActiveTab { tab in
@@ -31,9 +65,6 @@ final class SafariExtensionHandler: SFSafariExtensionHandler {
                         }
                         let accounts = try? SafariExtensionViewController.shared.viewModel.accounts(for: url)
                         item?.setEnabled(!(accounts?.isEmpty ?? true))
-                        if let token = accounts?.first?.otpGenerator.code() {
-                            page?.dispatchMessageToScript(withName: "credentials", userInfo: ["token": token])
-                        }
                         return validationHandler(true, "")
                     }
                 }
@@ -47,4 +78,10 @@ final class SafariExtensionHandler: SFSafariExtensionHandler {
         return SafariExtensionViewController.shared
     }
     
+}
+
+extension SFSafariPage {
+    func dispatchMessageToScript(_ event: SafariExtensionHandler.Event) {
+        dispatchMessageToScript(withName: event.name, userInfo: event.userInfo)
+    }
 }

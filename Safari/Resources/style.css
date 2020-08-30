@@ -1,0 +1,67 @@
+body {
+    margin: 4pt;
+}
+
+iframe {
+    border-radius: 10px;
+    background-color: rgba(245, 245, 245, 0.8);
+    border: 0.5pt solid lightgray;
+    height: 42pt;
+    width: 250px;
+    position: absolute;
+    z-index: 1;
+    overflow: hidden;
+    -webkit-filter: drop-shadow(0px 4px 4px rgba(0,0,0,0.2));
+    -webkit-backdrop-filter: blur(80px);
+}
+
+.hstack {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  align-content: stretch;
+  justify-content: flex-start;
+}
+
+.vstack {
+  display: flex;
+  flex-direction: column;
+}
+
+.icon {
+    width: 24pt;
+    height: 24pt;
+    opacity: 0.8;
+}
+
+.title {
+    font-family: -apple-system;
+    font-size: 10pt;
+    color: rgba(0, 0, 0, 1);
+    -webkit-user-select: none;
+}
+
+.subtitle {
+    font-family: -apple-system;
+    font-size: 8pt;
+    color: rgba(60.0, 60.0, 67.0, 0.6);
+    -webkit-user-select: none;
+}
+
+.box {
+    padding: 4pt;
+    border-radius: 4px;
+}
+
+.box:hover {
+    background: #419EFF;
+}
+
+.box:hover * {
+    color: white;
+}
+
+.box:hover .icon {
+    -webkit-filter: invert(100%);
+}
