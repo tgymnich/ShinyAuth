@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>Safari</string>
+	<string>ShinyAuth Extension</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -53,6 +53,6 @@
 		</dict>
 	</dict>
 	<key>NSHumanReadableDescription</key>
-	<string>This is Safari. You should tell us what your extension does here.</string>
+	<string>Show OTP codes and automatically fill out OTP forms.</string>
 </dict>
 </plist>

@@ -11,27 +11,25 @@ import OTPKit
 
 struct AccountView: View {
     let account: Account<TOTP>
-    @State private var currentCode: String = ""
+    @State private var currentCode = ""
     @State private var progress: CGFloat = 0.0
     @State private var showCopiedMessage = false
 
     var body: some View {
         HStack(spacing: 8) {
-            if let imageURL = account.imageURL {
-                KFImage(imageURL)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 44, height: 44)
-                    .mask(Circle())
-            } else {
-                IconView(text: account.issuer ?? account.label)
-                    .frame(width: 44, height: 44)
-            }
-
+            KFImage(account.imageURL)
+                .cancelOnDisappear(true)
+                .placeholder {
+                    IconView(text: account.issuer ?? account.label)
+                }
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 44, height: 44)
+                .mask(Circle())
             VStack(alignment: .leading, spacing: 2) {
                 if let issuer = account.issuer {
                     Text(issuer)
-                        .font(.body)
+                        .font(.headline)
                     Text(account.label)
                         .font(.footnote)
                         .foregroundColor(.secondary)
@@ -85,7 +83,7 @@ struct AccountView: View {
                         .transition(.slide)
                 }
             }
-        }.padding(.vertical, 10)
+        }.padding(.vertical, 8)
     }
 }
 

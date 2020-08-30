@@ -51,7 +51,7 @@ struct ContentView: View {
             .onAppear {
                 viewModel.reloadAccounts()
             }
-                .emittingError(viewModel.error, errorHandler: viewModel.resetError)
+            .emittingError(viewModel.error, errorHandler: viewModel.resetError)
         }
     }
 }

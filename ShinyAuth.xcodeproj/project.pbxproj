@@ -18,7 +18,6 @@
 		22655FFA24B8DF0E00BC8F10 /* ToolbarItemIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 22655FF924B8DF0E00BC8F10 /* ToolbarItemIcon.pdf */; };
 		22655FFD24B8DF0E00BC8F10 /* SafariExtensionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22655FFB24B8DF0E00BC8F10 /* SafariExtensionViewController.xib */; };
 		2265600224B8DF0E00BC8F10 /* Safari.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 22655FEE24B8DF0E00BC8F10 /* Safari.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		227958C324EEEBFE00E177ED /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 227958C224EEEBFE00E177ED /* KingfisherSwiftUI */; };
 		2285E02524AABCAD0028E234 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2285E02324AABCAD0028E234 /* ScannerViewController.swift */; };
 		2285E02724AABCAD0028E234 /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2285E02424AABCAD0028E234 /* ScannerView.swift */; };
 		228E9CF824EFD46400016B56 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228E9CF724EFD46400016B56 /* Extensions.swift */; };
@@ -42,17 +41,20 @@
 		593566FF24F46E3A0004448E /* AccountList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593566FD24F46E3A0004448E /* AccountList.swift */; };
 		5935670124F471850004448E /* ErrorAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5935670024F471850004448E /* ErrorAlert.swift */; };
 		5935670224F471850004448E /* ErrorAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5935670024F471850004448E /* ErrorAlert.swift */; };
+		5949117924F928DB00957C77 /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22228ED424F06FEF008EF527 /* IconView.swift */; };
+		5949117B24F92AEA00957C77 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EFD05D24ABD16C00A208C2 /* AccountView.swift */; };
 		594DDABD24F3213B002A603D /* AccountDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594DDABC24F3213B002A603D /* AccountDetail.swift */; };
 		594DDABE24F3213B002A603D /* AccountDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594DDABC24F3213B002A603D /* AccountDetail.swift */; };
 		594F993E24F5B1CD00B6EB71 /* NavigationViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594F993D24F5B1CD00B6EB71 /* NavigationViewWrapper.swift */; };
 		594F993F24F5B1CD00B6EB71 /* NavigationViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594F993D24F5B1CD00B6EB71 /* NavigationViewWrapper.swift */; };
+		599647F424FB2D4900E0FECB /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 599647F324FB2D4900E0FECB /* KingfisherSwiftUI */; };
+		599647FD24FB354C00E0FECB /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 599647FC24FB354C00E0FECB /* KingfisherSwiftUI */; };
+		5996480124FB357E00E0FECB /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 5996480024FB357E00E0FECB /* KingfisherSwiftUI */; };
 		599E903D24F72BFD00237AF1 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5908383E24F5D71A00AEC7E8 /* ViewModel.swift */; };
 		59BAB36824F2BE7C006E7B1F /* OTPKit in Frameworks */ = {isa = PBXBuildFile; productRef = 59BAB36724F2BE7C006E7B1F /* OTPKit */; };
 		59BAB36C24F2BEF1006E7B1F /* OTPKit in Frameworks */ = {isa = PBXBuildFile; productRef = 59BAB36B24F2BEF1006E7B1F /* OTPKit */; };
-		59BAB37424F2C044006E7B1F /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 59BAB37324F2C044006E7B1F /* KingfisherSwiftUI */; };
 		59D3C40024F8779800A7B77F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D3C3FF24F8779800A7B77F /* ContentView.swift */; };
 		59D3C40124F885A000A7B77F /* GradientText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22101BF924A8EEB000EFFD78 /* GradientText.swift */; };
-		59D3C40324F886DD00A7B77F /* LiteAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D3C40224F886DD00A7B77F /* LiteAccountView.swift */; };
 		59D3C40424F8874D00A7B77F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228E9CF724EFD46400016B56 /* Extensions.swift */; };
 		59F1E1DD24F72C89002E542E /* OTPKit in Frameworks */ = {isa = PBXBuildFile; productRef = 59F1E1DC24F72C89002E542E /* OTPKit */; };
 /* End PBXBuildFile section */
@@ -91,6 +93,26 @@
 				2265600224B8DF0E00BC8F10 /* Safari.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		599647F124FB2CC800E0FECB /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		599647F824FB2D5E00E0FECB /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		59BAB37024F2BFBA006E7B1F /* Embed Frameworks */ = {
@@ -144,7 +166,6 @@
 		594DDABC24F3213B002A603D /* AccountDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetail.swift; sourceTree = "<group>"; };
 		594F993D24F5B1CD00B6EB71 /* NavigationViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewWrapper.swift; sourceTree = "<group>"; };
 		59D3C3FF24F8779800A7B77F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		59D3C40224F886DD00A7B77F /* LiteAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiteAccountView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +173,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5996480124FB357E00E0FECB /* KingfisherSwiftUI in Frameworks */,
 				22655FF024B8DF0E00BC8F10 /* Cocoa.framework in Frameworks */,
 				59F1E1DD24F72C89002E542E /* OTPKit in Frameworks */,
 			);
@@ -161,7 +183,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				227958C324EEEBFE00E177ED /* KingfisherSwiftUI in Frameworks */,
+				599647F424FB2D4900E0FECB /* KingfisherSwiftUI in Frameworks */,
 				59BAB36824F2BE7C006E7B1F /* OTPKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -170,7 +192,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				59BAB37424F2C044006E7B1F /* KingfisherSwiftUI in Frameworks */,
+				599647FD24FB354C00E0FECB /* KingfisherSwiftUI in Frameworks */,
 				59BAB36C24F2BEF1006E7B1F /* OTPKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -205,9 +227,8 @@
 			children = (
 				22655FF224B8DF0E00BC8F10 /* SafariExtensionHandler.swift */,
 				22655FF424B8DF0E00BC8F10 /* SafariExtensionViewController.swift */,
-				22655FFB24B8DF0E00BC8F10 /* SafariExtensionViewController.xib */,
 				59D3C3FF24F8779800A7B77F /* ContentView.swift */,
-				59D3C40224F886DD00A7B77F /* LiteAccountView.swift */,
+				22655FFB24B8DF0E00BC8F10 /* SafariExtensionViewController.xib */,
 				22655FFE24B8DF0E00BC8F10 /* Info.plist */,
 				22655FFF24B8DF0E00BC8F10 /* Safari.entitlements */,
 				22655FF624B8DF0E00BC8F10 /* Resources */,
@@ -319,6 +340,7 @@
 				22655FEA24B8DF0E00BC8F10 /* Sources */,
 				22655FEB24B8DF0E00BC8F10 /* Frameworks */,
 				22655FEC24B8DF0E00BC8F10 /* Resources */,
+				599647F824FB2D5E00E0FECB /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -327,6 +349,7 @@
 			name = Safari;
 			packageProductDependencies = (
 				59F1E1DC24F72C89002E542E /* OTPKit */,
+				5996480024FB357E00E0FECB /* KingfisherSwiftUI */,
 			);
 			productName = Safari;
 			productReference = 22655FEE24B8DF0E00BC8F10 /* Safari.appex */;
@@ -339,6 +362,7 @@
 				22F2852224A8E822002FDD8C /* Sources */,
 				22F2852324A8E822002FDD8C /* Frameworks */,
 				22F2852424A8E822002FDD8C /* Resources */,
+				599647F124FB2CC800E0FECB /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -346,8 +370,8 @@
 			);
 			name = iOS;
 			packageProductDependencies = (
-				227958C224EEEBFE00E177ED /* KingfisherSwiftUI */,
 				59BAB36724F2BE7C006E7B1F /* OTPKit */,
+				599647F324FB2D4900E0FECB /* KingfisherSwiftUI */,
 			);
 			productName = iOS;
 			productReference = 22F2852624A8E822002FDD8C /* ShinyAuth.app */;
@@ -371,7 +395,7 @@
 			name = macOS;
 			packageProductDependencies = (
 				59BAB36B24F2BEF1006E7B1F /* OTPKit */,
-				59BAB37324F2C044006E7B1F /* KingfisherSwiftUI */,
+				599647FC24FB354C00E0FECB /* KingfisherSwiftUI */,
 			);
 			productName = macOS;
 			productReference = 22F2852E24A8E823002FDD8C /* ShinyAuth.app */;
@@ -451,8 +475,8 @@
 			);
 			mainGroup = 22F2851924A8E822002FDD8C;
 			packageReferences = (
-				227958C124EEEBFE00E177ED /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				59BAB36624F2BE7C006E7B1F /* XCRemoteSwiftPackageReference "OTPKit" */,
+				599647F224FB2D4900E0FECB /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 22F2852724A8E822002FDD8C /* Products */;
 			projectDirPath = "";
@@ -517,9 +541,10 @@
 			files = (
 				22655FF524B8DF0E00BC8F10 /* SafariExtensionViewController.swift in Sources */,
 				59D3C40124F885A000A7B77F /* GradientText.swift in Sources */,
-				59D3C40324F886DD00A7B77F /* LiteAccountView.swift in Sources */,
 				599E903D24F72BFD00237AF1 /* ViewModel.swift in Sources */,
+				5949117924F928DB00957C77 /* IconView.swift in Sources */,
 				59D3C40024F8779800A7B77F /* ContentView.swift in Sources */,
+				5949117B24F92AEA00957C77 /* AccountView.swift in Sources */,
 				22655FF324B8DF0E00BC8F10 /* SafariExtensionHandler.swift in Sources */,
 				59D3C40424F8874D00A7B77F /* Extensions.swift in Sources */,
 			);
@@ -628,6 +653,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				OTHER_SWIFT_FLAGS = "-DAPP_EXTENSION";
 				PRODUCT_BUNDLE_IDENTIFIER = ch.gymni.Test.ShinyAuth.Safari;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -650,6 +676,7 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				OTHER_SWIFT_FLAGS = "-DAPP_EXTENSION";
 				PRODUCT_BUNDLE_IDENTIFIER = ch.gymni.Test.ShinyAuth.Safari;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -1019,7 +1046,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		227958C124EEEBFE00E177ED /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+		599647F224FB2D4900E0FECB /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
 			requirement = {
@@ -1038,9 +1065,19 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		227958C224EEEBFE00E177ED /* KingfisherSwiftUI */ = {
+		599647F324FB2D4900E0FECB /* KingfisherSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 227958C124EEEBFE00E177ED /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			package = 599647F224FB2D4900E0FECB /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = KingfisherSwiftUI;
+		};
+		599647FC24FB354C00E0FECB /* KingfisherSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 599647F224FB2D4900E0FECB /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = KingfisherSwiftUI;
+		};
+		5996480024FB357E00E0FECB /* KingfisherSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 599647F224FB2D4900E0FECB /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = KingfisherSwiftUI;
 		};
 		59BAB36724F2BE7C006E7B1F /* OTPKit */ = {
@@ -1052,11 +1089,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 59BAB36624F2BE7C006E7B1F /* XCRemoteSwiftPackageReference "OTPKit" */;
 			productName = OTPKit;
-		};
-		59BAB37324F2C044006E7B1F /* KingfisherSwiftUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 227958C124EEEBFE00E177ED /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = KingfisherSwiftUI;
 		};
 		59F1E1DC24F72C89002E542E /* OTPKit */ = {
 			isa = XCSwiftPackageProductDependency;

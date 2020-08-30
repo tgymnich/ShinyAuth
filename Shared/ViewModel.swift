@@ -26,12 +26,16 @@ final class ViewModel: ObservableObject {
     @Published private(set)var error: Error?
     @Published private(set)var accounts: [Account<TOTP>] = []
     
+    private let accountProvider: () throws -> [Account<TOTP>]
+    
     init() {
+        accountProvider = ViewModel.loadAccountsFromKeychain
         reloadAccounts()
     }
     
     init(accounts: [Account<TOTP>]) {
-        self.accounts = accounts
+        self.accountProvider = { return accounts }
+        reloadAccounts()
     }
     
     func addAccount(url: URL) {
@@ -65,25 +69,40 @@ final class ViewModel: ObservableObject {
     
     func reloadAccounts() {
         do {
-            let keychainAccounts = try Account<TOTP>.loadAll(from: keychain)
-            accounts = keychainAccounts
+            accounts = try accountProvider()
         } catch let error {
             self.error = error
         }
     }
     
-    func accounts(for url: URL) -> [Account<TOTP>] {
-        let result = accounts.filter {
+    func filterAccounts(with url: URL) {
+        do {
+            accounts = try accountProvider().filter {
+                if let issuer = $0.issuer?.lowercased() {
+                    return url.absoluteString.lowercased().contains(issuer)
+                }
+                return false
+            }
+        } catch let error {
+            self.error = error
+        }
+    }
+    
+    func accounts(for url: URL) throws -> [Account<TOTP>] {
+        return try accountProvider().filter {
             if let issuer = $0.issuer?.lowercased() {
                 return url.absoluteString.lowercased().contains(issuer)
             }
             return false
         }
-        return result
     }
     
     func resetError() {
         error = nil
+    }
+    
+    static func loadAccountsFromKeychain() throws -> [Account<TOTP>] {
+        return try Account<TOTP>.loadAll(from: keychain)
     }
     
 }

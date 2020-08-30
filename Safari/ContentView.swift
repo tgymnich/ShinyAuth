@@ -9,14 +9,22 @@ import SwiftUI
 import OTPKit
 
 struct ContentView: View {
-    @State var accounts: [Account<TOTP>] = sampleAccounts
-    
+    @ObservedObject var viewModel: ViewModel
+
     var body: some View {
-        List {
-            ForEach(accounts) { account in
-                LiteAccountView(account: account)
+        VStack {
+            ForEach(viewModel.accounts) { account in
+                AccountView(account: account)
             }
         }
-        .background(Color.white)
+        .padding()
+        .onReceive(NotificationCenter.default.publisher(for: .didNavigate).receive(on: RunLoop.main)) {
+            guard let url = $0.userInfo?["url"] as? URL else { return }
+            viewModel.filterAccounts(with: url)
+        }
     }
+}
+
+public extension Notification.Name {
+    static let didNavigate = Notification.Name("didNavigate")
 }
