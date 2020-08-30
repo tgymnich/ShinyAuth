@@ -14,17 +14,20 @@ final class SafariExtensionHandler: SFSafariExtensionHandler {
     }
     
     enum Event {
-        case credentials(token: String)
+        case showPopup(label: String, token: String)
+        case fillToken(token: String)
         
         var name: String {
             switch self {
-            case .credentials: return "credentials"
+            case .showPopup: return "showPopup"
+            case .fillToken: return "fillToken"
             }
         }
         
         var userInfo: [String: Any]? {
             switch self {
-            case .credentials(let token): return ["token": token]
+            case let .showPopup(label, token): return ["label": label, "token": token]
+            case let .fillToken(token): return ["token": token]
             }
         }
     }
@@ -35,8 +38,10 @@ final class SafariExtensionHandler: SFSafariExtensionHandler {
             page.getPropertiesWithCompletionHandler { properties in
                 guard let url = properties?.url else { return }
                 let accounts = try? SafariExtensionViewController.shared.viewModel.accounts(for: url)
-                if let token = accounts?.first?.otpGenerator.code() {
-                    page.dispatchMessageToScript(Event.credentials(token: token.group(groupSize: 3)))
+                if let account = accounts?.first {
+                    let token = account.otpGenerator.code().group(groupSize: 3)
+                    let label = account.label
+                    page.dispatchMessageToScript(Event.showPopup(label: label, token: token))
                 }
             }
         default: break

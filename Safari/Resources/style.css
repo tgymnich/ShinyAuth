@@ -6,7 +6,7 @@ iframe {
     border-radius: 10px;
     background-color: rgba(245, 245, 245, 0.8);
     border: 0.5pt solid lightgray;
-    height: 42pt;
+    height: 46pt;
     width: 250px;
     position: absolute;
     z-index: 1;
@@ -27,6 +27,10 @@ iframe {
 .vstack {
   display: flex;
   flex-direction: column;
+}
+
+.vstack > * {
+    margin: 2px;
 }
 
 .icon {
