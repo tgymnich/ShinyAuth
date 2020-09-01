@@ -11,10 +11,11 @@ final class SafariExtensionHandler: SFSafariExtensionHandler {
     
     enum Message: String, CaseIterable {
         case getToken = "getToken"
+        case getAccounts = "getAccounts"
     }
     
     enum Event {
-        case showPopup(label: String, token: String)
+        case showPopup(accounts: [[String: String]])
         case fillToken(token: String)
         
         var name: String {
@@ -26,7 +27,7 @@ final class SafariExtensionHandler: SFSafariExtensionHandler {
         
         var userInfo: [String: Any]? {
             switch self {
-            case let .showPopup(label, token): return ["label": label, "token": token]
+            case let .showPopup(accounts): return ["accounts": accounts]
             case let .fillToken(token): return ["token": token]
             }
         }
@@ -40,11 +41,22 @@ final class SafariExtensionHandler: SFSafariExtensionHandler {
                 let accounts = try? SafariExtensionViewController.shared.viewModel.accounts(for: url)
                 if let account = accounts?.first {
                     let token = account.otpGenerator.code().group(groupSize: 3)
-                    let label = account.label
-                    page.dispatchMessageToScript(Event.showPopup(label: label, token: token))
+                    page.dispatchMessageToScript(Event.fillToken(token: token))
                 }
             }
-        default: break
+        case .getAccounts:
+            page.getPropertiesWithCompletionHandler { properties in
+                guard let url = properties?.url else { return }
+                let accounts = try? SafariExtensionViewController.shared.viewModel.accounts(for: url)
+                if let accounts = accounts {
+                    let array = accounts.map {
+                        return ["label": $0.label,
+                                "token": $0.otpGenerator.code().group(groupSize: 3)]
+                    }
+                    page.dispatchMessageToScript(Event.showPopup(accounts: array))
+                }
+            }
+        case .none: break
         }
     }
         

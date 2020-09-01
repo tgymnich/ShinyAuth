@@ -1,31 +1,35 @@
 document.addEventListener("DOMContentLoaded", function(event) {
-    var iFrameDetection = (window === window.parent) ? false : true;
+    const iFrameDetection = (window === window.parent) ? false : true;
     if (!iFrameDetection) {
-        safari.extension.dispatchMessage("getToken");
+        safari.extension.dispatchMessage("getAccounts");
     }
 });
 
 window.addEventListener("resize", function(event) {
-    var iframe = document.getElementById("shiny-auth");
-    var otp = findOTPField();
-    if (otp && iframe) {
-        var rect = otp.getBoundingClientRect();
-        iframe.style.top = rect.bottom+2+"px";
-        iframe.style.left = rect.left-4+"px";
+    const iframe = document.getElementById("shiny-auth");
+    if (iframe) {
+        resizeIFrame(iframe);
+        iframe.style.display = "none";
+    }
+});
+
+window.visualViewport.addEventListener("resize", function(event) {
+    const iframe = document.getElementById("shiny-auth");
+    if (iframe) {
         iframe.style.display = "none";
     }
 });
 
 safari.self.addEventListener("message", function (event) {
     if (event.name == "showPopup") {
-        setupIFrame(event.message.label, event.message.token);
+        setupIFrame(event.message.accounts);
     } else if (event.name == "fillToken") {
-        
+        fillToken(token);
     }
 });
 
 function fillToken(token) {
-    var otp = findOTPField();
+    const otp = findOTPField();
     
     if (otp) {
         otp.value = token;
@@ -33,16 +37,12 @@ function fillToken(token) {
     }
 };
 
-
-function setupIFrame(label, token) {
-    var otp = findOTPField();
+function setupIFrame(accounts) {
+    const otp = findOTPField();
     
     if (otp) {
-        otp.value = token;
-        otp.style.backgroundColor = "#FAFFBD";
-        
         var iframe = document.getElementById("shiny-auth");
-        var rect = otp.getBoundingClientRect();
+        const rect = otp.getBoundingClientRect();
         
         if (!iframe) {
             iframe = document.createElement("iframe");
@@ -59,25 +59,53 @@ function setupIFrame(label, token) {
             iframe.style.display = "block";
         };
         
-        otp.onblur = function() {
+        otp.focusout = function() {
             iframe.style.display = "none";
         };
         
-        var html = createAccountView(label, token);
+        const accountHTML = accounts.map(account => createAccountView(account.label, account.token));
+        const html = accountHTML.join("");
+        
+        const itemHeight = 47;
+        const padding = 5;
+        const popupHeight = accounts.length * itemHeight + 2 * padding;
         
         iframe.id = "shiny-auth";
+//        iframe.sandbox = "allow-scripts";
         iframe.setAttribute("srcdoc", html);
-        iframe.style.top = rect.bottom+2+"px";
-        iframe.style.left = rect.left-4+"px";
         iframe.scrolling = "no";
+        iframe.style.height = popupHeight+"px";
+        resizeIFrame(iframe);
+        
+        iframe.addEventListener("load", function() {
+            console.log("load")
+            for (let i = 0; i < accounts.length; i++) {
+                let element = iframe.contentWindow.document.getElementsByClassName("box")[i];
+                let account = accounts[i];
+                
+                element.onclick = function() {
+                    console.log("click")
+                    fillToken(account.token);
+                    iframe.style.display = "none";
+                };
+            }
+        });
+
+    }
+}
+
+function resizeIFrame(iframe) {
+    const otp = findOTPField();
+    if (otp && iframe) {
+        const rect = otp.getBoundingClientRect();
+        iframe.style.top = rect.bottom+2+"px";
+        iframe.style.left = rect.left-6+"px";
     }
 }
 
 function createAccountView(label, token) {
-    var html = `
-    <div class="box">
-    <div class="hstack">
-    <div class="icon">
+    
+    const icon = `
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:serif="http://www.serif.com/" width="100%" height="100%" viewBox="0 0 14 14" version="1.1" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
     <g transform="matrix(1,0,0,1,-2870,-120)">
     <g id="AppIcon-Safari" serif:id="AppIcon Safari" transform="matrix(0.0194444,0,0,0.0194444,2814.19,117.667)">
@@ -101,16 +129,23 @@ function createAccountView(label, token) {
     </g>
     </g>
     </svg>
-    </div>
-    <div class="vstack">
-    <div class="title">
-    ${label}
-    </div>
-    <div class="subtitle">
-    Fill code ${token}
-    </div>
-    </div>
-    </div>
+    `;
+    
+    const html = `
+    <div class="box">
+        <div class="hstack">
+            <div class="icon">
+                ${icon}
+            </div>
+            <div class="vstack">
+                <div class="title">
+                    ${label}
+                </div>
+                <div class="subtitle">
+                    Fill code ${token}
+                </div>
+            </div>
+        </div>
     </div>
     `;
     
@@ -120,12 +155,12 @@ function createAccountView(label, token) {
 
 function findOTPField() {
     const keywords = ["twofactor", "two-factor", "2fa", "otp", "authfactor", "6-digit code", "one-time-code"];
-    var inputs = document.getElementsByTagName("input");
+    const inputs = document.getElementsByTagName("input");
     
     for (let input of inputs) {
-        var testID = keywords.some(el => input.id.includes(el));
-        var testName = keywords.some(el => input.name.includes(el));
-        var testPlaceholder = keywords.some(el => input.placeholder.includes(el));
+        const testID = keywords.some(el => input.id.includes(el));
+        const testName = keywords.some(el => input.name.includes(el));
+        const testPlaceholder = keywords.some(el => input.placeholder.includes(el));
         
         if (testID || testName || testPlaceholder) {
             return input;

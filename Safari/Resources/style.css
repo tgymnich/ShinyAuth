@@ -6,8 +6,7 @@ iframe {
     border-radius: 10px;
     background-color: rgba(245, 245, 245, 0.8);
     border: 0.5pt solid lightgray;
-    height: 46pt;
-    width: 250px;
+    width: 240px;
     position: absolute;
     z-index: 1;
     overflow: hidden;
@@ -30,7 +29,7 @@ iframe {
 }
 
 .vstack > * {
-    margin: 2px;
+    margin: 1px;
 }
 
 .icon {
@@ -42,15 +41,18 @@ iframe {
 .title {
     font-family: -apple-system;
     font-size: 10pt;
-    color: rgba(0, 0, 0, 1);
-    -webkit-user-select: none;
+    color: ButtonText;
+    opacity: 1;
+/*    -webkit-user-select: none;*/
 }
 
 .subtitle {
     font-family: -apple-system;
     font-size: 8pt;
-    color: rgba(60.0, 60.0, 67.0, 0.6);
-    -webkit-user-select: none;
+    color: CaptionText;
+    /*color: rgba(60.0, 60.0, 67.0, 0.6);*/
+    opacity: 0.6;
+/*    -webkit-user-select: none;*/
 }
 
 .box {
@@ -64,6 +66,7 @@ iframe {
 
 .box:hover * {
     color: white;
+    opacity: 1;
 }
 
 .box:hover .icon {
