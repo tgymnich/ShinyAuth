@@ -15,17 +15,21 @@ iframe {
 }
 
 .hstack {
-  display: inline-flex;
+  display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  align-items: center;
-  align-content: stretch;
   justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
 }
 
 .vstack {
-  display: flex;
+  display: flex-inline;
   flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
 }
 
 .vstack > * {
@@ -43,16 +47,15 @@ iframe {
     font-size: 10pt;
     color: ButtonText;
     opacity: 1;
-/*    -webkit-user-select: none;*/
+    -webkit-user-select: none;
 }
 
 .subtitle {
     font-family: -apple-system;
     font-size: 8pt;
     color: CaptionText;
-    /*color: rgba(60.0, 60.0, 67.0, 0.6);*/
     opacity: 0.6;
-/*    -webkit-user-select: none;*/
+    -webkit-user-select: none;
 }
 
 .box {

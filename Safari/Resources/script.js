@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 window.addEventListener("resize", function(event) {
     const iframe = document.getElementById("shiny-auth");
     if (iframe) {
-        resizeIFrame(iframe);
+        resizeIframe(iframe);
         iframe.style.display = "none";
     }
 });
@@ -17,7 +17,7 @@ window.visualViewport.addEventListener("resize", function(event) {
     const iframe = document.getElementById("shiny-auth");
     if (iframe) {
         iframe.style.display = "none";
-    }
+    };
 });
 
 safari.self.addEventListener("message", function (event) {
@@ -59,32 +59,29 @@ function setupIFrame(accounts) {
             iframe.style.display = "block";
         };
         
-        otp.focusout = function() {
+        otp.onblur = function() {
             iframe.style.display = "none";
         };
         
         const accountHTML = accounts.map(account => createAccountView(account.label, account.token));
         const html = accountHTML.join("");
         
-        const itemHeight = 47;
+        const itemHeight = 43;
         const padding = 5;
         const popupHeight = accounts.length * itemHeight + 2 * padding;
         
         iframe.id = "shiny-auth";
-//        iframe.sandbox = "allow-scripts";
         iframe.setAttribute("srcdoc", html);
         iframe.scrolling = "no";
         iframe.style.height = popupHeight+"px";
-        resizeIFrame(iframe);
+        resizeIframe(iframe);
         
         iframe.addEventListener("load", function() {
-            console.log("load")
             for (let i = 0; i < accounts.length; i++) {
                 let element = iframe.contentWindow.document.getElementsByClassName("box")[i];
                 let account = accounts[i];
                 
-                element.onclick = function() {
-                    console.log("click")
+                element.onmousedown = function() {
                     fillToken(account.token);
                     iframe.style.display = "none";
                 };
@@ -94,7 +91,7 @@ function setupIFrame(accounts) {
     }
 }
 
-function resizeIFrame(iframe) {
+function resizeIframe(iframe) {
     const otp = findOTPField();
     if (otp && iframe) {
         const rect = otp.getBoundingClientRect();
