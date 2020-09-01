@@ -8,8 +8,7 @@
 import SwiftUI
 
 protocol ErrorHandler {
-    func handle<T: View>(_ error: Error?, in view: T, errorHandler: @escaping () -> Void
-) -> AnyView
+    func handle<T: View>(_ error: Error?, in view: T, errorHandler: @escaping () -> Void) -> AnyView
 }
 
 struct AlertErrorHandler: ErrorHandler {

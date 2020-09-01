@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct NavigationViewWrapper<Content: View>: View {
-    
     let content: () -> Content
 
     init(@ViewBuilder content: @escaping () -> Content) {
