@@ -8,9 +8,8 @@
 import SafariServices
 import SwiftUI
 
-
 final class SafariExtensionViewController: SFSafariExtensionViewController {
-    let viewModel = ViewModel(accounts: sampleAccounts)
+    let viewModel = ViewModel()
     private lazy var contentView = ContentView(viewModel: viewModel)
     private lazy var swiftUI = NSHostingView(rootView: contentView)
     

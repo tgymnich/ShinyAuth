@@ -1,166 +1,175 @@
 document.addEventListener("DOMContentLoaded", function(event) {
-    const iFrameDetection = (window === window.parent) ? false : true;
-    if (!iFrameDetection) {
-        safari.extension.dispatchMessage("getAccounts");
+    const isIframe = (window === window.parent) ? false : true;
+    if (!isIframe && otp()) {
+        addAppExtensionEventListeners();
+        addWindowEventListeners();
+        addIframeEventListeners();
+        safari.extension.dispatchMessage("extensionReady");
+    } else {
+        addIframeEventListeners();
+        parent.postMessage({message: "iframeReady"}, "*");
     }
 });
 
-window.addEventListener("resize", function(event) {
-    const iframe = document.getElementById("shiny-auth");
-    if (iframe) {
-        resizeIframe(iframe);
-        iframe.style.display = "none";
-    }
-});
+var accounts;
 
-window.visualViewport.addEventListener("resize", function(event) {
-    const iframe = document.getElementById("shiny-auth");
-    if (iframe) {
-        iframe.style.display = "none";
-    };
-});
+var _otp;
+function otp() {
+    if (_otp == null) {
+        const keywords = ["twofactor", "two-factor", "2fa", "otp", "authfactor", "6-digit code", "one-time-code"];
+        const inputs = document.getElementsByTagName("input");
 
-safari.self.addEventListener("message", function (event) {
-    if (event.name == "showPopup") {
-        setupIFrame(event.message.accounts);
-    } else if (event.name == "fillToken") {
-        fillToken(token);
-    }
-});
+        for (let input of inputs) {
+            const testID = keywords.some(el => input.id.includes(el));
+            const testName = keywords.some(el => input.name.includes(el));
+            const testPlaceholder = keywords.some(el => input.placeholder.includes(el));
 
-function fillToken(token) {
-    const otp = findOTPField();
-    
-    if (otp) {
-        otp.value = token;
-        otp.style.backgroundColor = "#FAFFBD";
-    }
-};
-
-function setupIFrame(accounts) {
-    const otp = findOTPField();
-    
-    if (otp) {
-        var iframe = document.getElementById("shiny-auth");
-        const rect = otp.getBoundingClientRect();
-        
-        if (!iframe) {
-            iframe = document.createElement("iframe");
-            // insert iframe after otp
-            if (otp.nextSibling) {
-                otp.parentNode.insertBefore(iframe, otp.nextSibling);
-            }
-            else {
-                otp.parentNode.appendChild(iframe);
+            if (testID || testName || testPlaceholder) {
+                _otp = input;
+                return input;
             }
         }
-        
-        otp.onfocus = function() {
-            iframe.style.display = "block";
-        };
-        
-        otp.onblur = function() {
-            iframe.style.display = "none";
-        };
-        
-        const accountHTML = accounts.map(account => createAccountView(account.label, account.token));
-        const html = accountHTML.join("");
-        
+        return undefined;
+    } else {
+        return _otp;
+    }
+}
+
+var _iframe;
+function iframe() {
+    if (_iframe == null) {
+        _iframe = document.createElement("iframe");
+        _iframe.sandbox = "allow-scripts";
+        _iframe.scrolling = "no";
+
+        if (otp().nextSibling) {
+            otp().parentNode.insertBefore(_iframe, otp().nextSibling);
+        } else {
+            otp().parentNode.appendChild(_iframe);
+        }
+        return _iframe;
+    } else {
+        return _iframe
+    }
+}
+
+function resizeIframe(accounts) {
+    if (otp() && iframe()) {
+        const rect = otp().getBoundingClientRect();
         const itemHeight = 43;
         const padding = 5;
         const popupHeight = accounts.length * itemHeight + 2 * padding;
-        
-        iframe.id = "shiny-auth";
-        iframe.setAttribute("srcdoc", html);
-        iframe.scrolling = "no";
-        iframe.style.height = popupHeight+"px";
-        resizeIframe(iframe);
-        
-        iframe.addEventListener("load", function() {
-            for (let i = 0; i < accounts.length; i++) {
-                let element = iframe.contentWindow.document.getElementsByClassName("box")[i];
-                let account = accounts[i];
-                
-                element.onmousedown = function() {
-                    fillToken(account.token);
-                    iframe.style.display = "none";
-                };
-            }
-        });
-
+        iframe().style.top = rect.bottom+2+"px";
+        iframe().style.left = rect.left-6+"px";
+        iframe().style.height = popupHeight+"px";
     }
 }
 
-function resizeIframe(iframe) {
-    const otp = findOTPField();
-    if (otp && iframe) {
-        const rect = otp.getBoundingClientRect();
-        iframe.style.top = rect.bottom+2+"px";
-        iframe.style.left = rect.left-6+"px";
+var originalOTPBackgroundColor = "white";
+function fillToken(token) {
+    if (otp()) {
+        otp().value = token;
+        originalOTPBackgroundColor = otp().style.backgroundColor;
+        otp().style.backgroundColor = "#FAFFBD";
+    }
+    iframe().style.display = "none";
+}
+
+function createAccountList(accounts) {
+    for (let account of accounts) {
+        createAccount(account.label, account.token)
     }
 }
 
-function createAccountView(label, token) {
+function createAccount(label, token) {
+    const box = document.createElement("div");
+    box.className = "box";
+    document.body.appendChild(box);
+
+    const hstack = document.createElement("div");
+    hstack.className = "hstack";
+    box.appendChild(hstack);
+
+    const icon = document.createElement("div");
+    icon.className = "icon";
+    hstack.appendChild(icon);
     
-    const icon = `
-    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:serif="http://www.serif.com/" width="100%" height="100%" viewBox="0 0 14 14" version="1.1" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-    <g transform="matrix(1,0,0,1,-2870,-120)">
-    <g id="AppIcon-Safari" serif:id="AppIcon Safari" transform="matrix(0.0194444,0,0,0.0194444,2814.19,117.667)">
-    <rect x="2870" y="120" width="720" height="720" style="fill:none;"/>
-    <g transform="matrix(1.05751,0,0,0.993363,2701.24,12.1259)">
-    <g transform="matrix(1.0014,0,0,0.796875,-3.70248,110.594)">
-    <path d="M716,478.673C716,442.979 694.339,414 667.658,414L338.342,414C311.661,414 290,442.979 290,478.673L290,765.327C290,801.021 311.661,830 338.342,830L667.658,830C694.339,830 716,801.021 716,765.327L716,478.673Z"/>
-    </g>
-    <g>
-    <g transform="matrix(0.691623,0,0,0.753846,143.94,65.9692)">
-    <path d="M742,365.5C742,239.855 640.145,138 514.5,138C388.855,138 287,239.855 287,365.5L377.152,365.5C377.152,289.645 438.645,228.152 514.5,228.152C590.355,228.152 651.848,289.645 651.848,365.5L742,365.5Z"/>
-    </g>
-    <g transform="matrix(2.00095,0,0,1,-342.762,-1.87228e-05)">
-    <rect x="342.436" y="341.5" width="31.161" height="129"/>
-    </g>
-    <g transform="matrix(2.00095,0,0,1,-657.749,-5.09119e-05)">
-    <rect x="625.964" y="341.5" width="31.161" height="129"/>
-    </g>
-    </g>
-    </g>
-    </g>
-    </g>
-    </svg>
-    `;
-    
-    const html = `
-    <div class="box">
-        <div class="hstack">
-            <div class="icon">
-                ${icon}
-            </div>
-            <div class="vstack">
-                <div class="title">
-                    ${label}
-                </div>
-                <div class="subtitle">
-                    Fill code ${token}
-                </div>
-            </div>
-        </div>
-    </div>
-    `;
-    
-    return html;
+    const svg = document.createElement("img");
+    svg.src = safari.extension.baseURI + "icon.svg";
+    icon.appendChild(svg);
+
+    const vstack = document.createElement("div");
+    vstack.className = "vstack";
+    hstack.appendChild(vstack);
+
+    const title = document.createElement("div");
+    title.className = "title";
+    title.innerHTML = label;
+    vstack.appendChild(title);
+
+    const subtitle = document.createElement("div");
+    subtitle.className = "subtitle";
+    subtitle.innerHTML = `Fill code ${token}`;
+    vstack.appendChild(subtitle);
+
+    box.onmousedown = function() {
+        parent.postMessage({"message": "fillToken", "token": token}, "*");
+    };
 }
 
+function addOTPEventListeners() {
+    otp().addEventListener("focus", function (event) {
+        iframe().style.display = "block";
+    });
 
-function findOTPField() {
-    const keywords = ["twofactor", "two-factor", "2fa", "otp", "authfactor", "6-digit code", "one-time-code"];
-    const inputs = document.getElementsByTagName("input");
+    otp().addEventListener("blur", function (event) {
+        iframe().style.display = "none";
+    });
     
-    for (let input of inputs) {
-        const testID = keywords.some(el => input.id.includes(el));
-        const testName = keywords.some(el => input.name.includes(el));
-        const testPlaceholder = keywords.some(el => input.placeholder.includes(el));
-        
-        if (testID || testName || testPlaceholder) {
-            return input;
+    otp().addEventListener("input", function (event) {
+        otp().style.backgroundColor = originalOTPBackgroundColor;
+    });
+}
+
+function addWindowEventListeners() {
+    window.addEventListener("resize", function(event) {
+        if (iframe()) {
+            resizeIframe(accounts);
+            iframe().style.display = "none";
         }
-    }
+    });
+
+    window.visualViewport.addEventListener("resize", function(event) {
+        if (iframe()) {
+            iframe().style.display = "none";
+        };
+    });
 }
+
+function addIframeEventListeners() {
+    // IFrame Extension Messages
+    window.addEventListener('message', function (event) {
+        if (event.data.message == "iframeReady") {
+            resizeIframe(accounts);
+            iframe().contentWindow.postMessage({"message": "creatAccountList", "accounts": accounts}, "*");
+        } else if (event.data.message == "creatAccountList") {
+            createAccountList(event.data.accounts);
+        } else if (event.data.message == "fillToken") {
+            fillToken(event.data.token);
+        }
+    });
+}
+
+function addAppExtensionEventListeners() {
+    // App Extension Messages
+    safari.self.addEventListener("message", function (event) {
+        if (event.name == "showPopup") {
+            addOTPEventListeners();
+            iframe();
+            accounts = event.message.accounts;
+        } else if (event.name == "fillToken") {
+            fillToken(event.message.token);
+        }
+    });
+}
+

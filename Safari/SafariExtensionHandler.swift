@@ -11,7 +11,7 @@ final class SafariExtensionHandler: SFSafariExtensionHandler {
     
     enum Message: String, CaseIterable {
         case getToken = "getToken"
-        case getAccounts = "getAccounts"
+        case extensionReady = "extensionReady"
     }
     
     enum Event {
@@ -44,7 +44,7 @@ final class SafariExtensionHandler: SFSafariExtensionHandler {
                     page.dispatchMessageToScript(Event.fillToken(token: token))
                 }
             }
-        case .getAccounts:
+        case .extensionReady:
             page.getPropertiesWithCompletionHandler { properties in
                 guard let url = properties?.url else { return }
                 let accounts = try? SafariExtensionViewController.shared.viewModel.accounts(for: url)

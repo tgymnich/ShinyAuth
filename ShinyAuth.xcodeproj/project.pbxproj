@@ -15,7 +15,6 @@
 		22655FF024B8DF0E00BC8F10 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22655FEF24B8DF0E00BC8F10 /* Cocoa.framework */; };
 		22655FF324B8DF0E00BC8F10 /* SafariExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22655FF224B8DF0E00BC8F10 /* SafariExtensionHandler.swift */; };
 		22655FF524B8DF0E00BC8F10 /* SafariExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22655FF424B8DF0E00BC8F10 /* SafariExtensionViewController.swift */; };
-		22655FF824B8DF0E00BC8F10 /* script.js in Resources */ = {isa = PBXBuildFile; fileRef = 22655FF724B8DF0E00BC8F10 /* script.js */; };
 		22655FFD24B8DF0E00BC8F10 /* SafariExtensionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22655FFB24B8DF0E00BC8F10 /* SafariExtensionViewController.xib */; };
 		2265600224B8DF0E00BC8F10 /* Safari.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 22655FEE24B8DF0E00BC8F10 /* Safari.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2285E02524AABCAD0028E234 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2285E02324AABCAD0028E234 /* ScannerViewController.swift */; };
@@ -38,6 +37,8 @@
 		5908383F24F5D71A00AEC7E8 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5908383E24F5D71A00AEC7E8 /* ViewModel.swift */; };
 		5908384024F5D71A00AEC7E8 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5908383E24F5D71A00AEC7E8 /* ViewModel.swift */; };
 		5915406124FC051700BAF1EA /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = 5915406024FC051700BAF1EA /* style.css */; };
+		592D842924FF12F200F8B29D /* script.js in Resources */ = {isa = PBXBuildFile; fileRef = 592D842824FF12F200F8B29D /* script.js */; };
+		592D842B24FF33DC00F8B29D /* icon.svg in Resources */ = {isa = PBXBuildFile; fileRef = 592D842A24FF33DC00F8B29D /* icon.svg */; };
 		593566FE24F46E3A0004448E /* AccountList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593566FD24F46E3A0004448E /* AccountList.swift */; };
 		593566FF24F46E3A0004448E /* AccountList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593566FD24F46E3A0004448E /* AccountList.swift */; };
 		5935670124F471850004448E /* ErrorAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5935670024F471850004448E /* ErrorAlert.swift */; };
@@ -136,7 +137,6 @@
 		22655FEF24B8DF0E00BC8F10 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		22655FF224B8DF0E00BC8F10 /* SafariExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionHandler.swift; sourceTree = "<group>"; };
 		22655FF424B8DF0E00BC8F10 /* SafariExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionViewController.swift; sourceTree = "<group>"; };
-		22655FF724B8DF0E00BC8F10 /* script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = script.js; sourceTree = "<group>"; };
 		22655FFC24B8DF0E00BC8F10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SafariExtensionViewController.xib; sourceTree = "<group>"; };
 		22655FFE24B8DF0E00BC8F10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22655FFF24B8DF0E00BC8F10 /* Safari.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Safari.entitlements; sourceTree = "<group>"; };
@@ -162,6 +162,8 @@
 		22F2854724A8E823002FDD8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5908383E24F5D71A00AEC7E8 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		5915406024FC051700BAF1EA /* style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
+		592D842824FF12F200F8B29D /* script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = script.js; sourceTree = "<group>"; };
+		592D842A24FF33DC00F8B29D /* icon.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = icon.svg; sourceTree = "<group>"; };
 		593566FD24F46E3A0004448E /* AccountList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountList.swift; sourceTree = "<group>"; };
 		5935670024F471850004448E /* ErrorAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorAlert.swift; sourceTree = "<group>"; };
 		593F689024F3D9FA00007D5A /* ShinyAuth.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShinyAuth.entitlements; sourceTree = "<group>"; };
@@ -242,7 +244,8 @@
 			isa = PBXGroup;
 			children = (
 				223DBF8F24FB3DD90066F775 /* ToolbarItemIcon.pdf */,
-				22655FF724B8DF0E00BC8F10 /* script.js */,
+				592D842A24FF33DC00F8B29D /* icon.svg */,
+				592D842824FF12F200F8B29D /* script.js */,
 				5915406024FC051700BAF1EA /* style.css */,
 			);
 			path = Resources;
@@ -499,10 +502,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				592D842924FF12F200F8B29D /* script.js in Resources */,
+				592D842B24FF33DC00F8B29D /* icon.svg in Resources */,
 				223DBF9024FB3DD90066F775 /* ToolbarItemIcon.pdf in Resources */,
 				5915406124FC051700BAF1EA /* style.css in Resources */,
 				22655FFD24B8DF0E00BC8F10 /* SafariExtensionViewController.xib in Resources */,
-				22655FF824B8DF0E00BC8F10 /* script.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
