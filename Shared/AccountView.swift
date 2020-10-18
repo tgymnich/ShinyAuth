@@ -6,7 +6,9 @@
 //
 
 import SwiftUI
+#if canImport(KingfisherSwiftUI)
 import KingfisherSwiftUI
+#endif
 import OTPKit
 
 struct AccountView: View {
@@ -17,6 +19,7 @@ struct AccountView: View {
 
     var body: some View {
         HStack(spacing: 8) {
+            #if canImport(KingfisherSwiftUI)
             KFImage(account.imageURL)
                 .cancelOnDisappear(true)
                 .placeholder {
@@ -26,6 +29,7 @@ struct AccountView: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 44, height: 44)
                 .mask(Circle())
+            #endif
             VStack(alignment: .leading, spacing: 2) {
                 if let issuer = account.issuer {
                     Text(issuer)
@@ -41,42 +45,13 @@ struct AccountView: View {
             Spacer()
             VStack {
                 if !showCopiedMessage {
-                    GradientText(currentCode, colors: [.green, .blue], progress: progress, kerning: 1.0)
-                        .font(.title2)
-                        .transition(.scale)
-                        .onAppear {
-                            currentCode = account.otpGenerator.code().group(groupSize: 3)
-                        }
-                        .onReceive(account.otpGenerator.publisher) { token in
-                            currentCode = token.code.group(groupSize: 3)
-                            progress = -0.99
-                            withAnimation(.linear(duration: token.timeRemaining)) {
-                                progress = 0.99
-                            }
-                        }
-                        .onDrag {
-                            return NSItemProvider(object: account.otpGenerator.code() as NSString)
-                        }
-                        .onTapGesture {
-                            #if os(macOS)
-                            let pasteboard = NSPasteboard.general
-                            pasteboard.declareTypes([.string], owner: nil)
-                            pasteboard.setString(account.otpGenerator.code(), forType: .string)
-                            #else
-                            UIPasteboard.general.string = account.otpGenerator.code()
-                            let generator = UINotificationFeedbackGenerator()
-                            generator.notificationOccurred(.success)
-                            #endif
-
-                            withAnimation {
-                                showCopiedMessage = true
-                            }
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                                withAnimation {
-                                    showCopiedMessage = false
-                                }
-                            }
-                        }
+                    #if os(macOS) || os(iOS)
+                    codeView.onDrag {
+                        return NSItemProvider(object: account.otpGenerator.code() as NSString)
+                    }
+                    #else
+                    codeView
+                    #endif
                 } else {
                     GradientText("copied!", colors: [.yellow, .red, .orange], progress: 0)
                         .font(.body)
@@ -84,6 +59,43 @@ struct AccountView: View {
                 }
             }
         }.padding(.vertical, 8)
+    }
+
+    var codeView: some View {
+        GradientText(currentCode, colors: [.green, .blue], progress: progress, kerning: 1.0)
+            .font(.title2)
+            .transition(.scale)
+            .onAppear {
+                currentCode = account.otpGenerator.code().group(groupSize: 3)
+            }
+            .onReceive(account.otpGenerator.publisher) { token in
+                currentCode = token.code.group(groupSize: 3)
+                progress = -0.99
+                withAnimation(.linear(duration: token.timeRemaining)) {
+                    progress = 0.99
+                }
+            }
+            .onTapGesture {
+                #if os(macOS)
+                let pasteboard = NSPasteboard.general
+                pasteboard.declareTypes([.string], owner: nil)
+                pasteboard.setString(account.otpGenerator.code(), forType: .string)
+                #elseif os(iOS)
+                UIPasteboard.general.string = account.otpGenerator.code()
+                let generator = UINotificationFeedbackGenerator()
+                generator.notificationOccurred(.success)
+                #endif
+                #if os(macOS) || os(iOS)
+                withAnimation {
+                    showCopiedMessage = true
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    withAnimation {
+                        showCopiedMessage = false
+                    }
+                }
+                #endif
+            }
     }
 }
 
