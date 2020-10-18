@@ -12,11 +12,21 @@
 		22228ED524F06FEF008EF527 /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22228ED424F06FEF008EF527 /* IconView.swift */; };
 		22228ED624F06FEF008EF527 /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22228ED424F06FEF008EF527 /* IconView.swift */; };
 		223DBF9024FB3DD90066F775 /* ToolbarItemIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 223DBF8F24FB3DD90066F775 /* ToolbarItemIcon.pdf */; };
+		22602971253BCB0E0095C59C /* OTPKit in Frameworks */ = {isa = PBXBuildFile; productRef = 22602970253BCB0E0095C59C /* OTPKit */; };
+		22602976253BCB390095C59C /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5908383E24F5D71A00AEC7E8 /* ViewModel.swift */; };
 		22655FF024B8DF0E00BC8F10 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22655FEF24B8DF0E00BC8F10 /* Cocoa.framework */; };
 		22655FF324B8DF0E00BC8F10 /* SafariExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22655FF224B8DF0E00BC8F10 /* SafariExtensionHandler.swift */; };
 		22655FF524B8DF0E00BC8F10 /* SafariExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22655FF424B8DF0E00BC8F10 /* SafariExtensionViewController.swift */; };
 		22655FFD24B8DF0E00BC8F10 /* SafariExtensionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22655FFB24B8DF0E00BC8F10 /* SafariExtensionViewController.xib */; };
 		2265600224B8DF0E00BC8F10 /* Safari.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 22655FEE24B8DF0E00BC8F10 /* Safari.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2280A3D0253BC9A8000F5381 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2280A3CF253BC9A8000F5381 /* Assets.xcassets */; };
+		2280A3D7253BC9A9000F5381 /* Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2280A3D6253BC9A9000F5381 /* Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2280A3DC253BC9A9000F5381 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2280A3DB253BC9A9000F5381 /* ContentView.swift */; };
+		2280A3DE253BC9A9000F5381 /* ShinyAuthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2280A3DD253BC9A9000F5381 /* ShinyAuthApp.swift */; };
+		2280A3E0253BC9A9000F5381 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2280A3DF253BC9A9000F5381 /* ComplicationController.swift */; };
+		2280A3E2253BC9A9000F5381 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2280A3E1253BC9A9000F5381 /* Assets.xcassets */; };
+		2280A3E5253BC9A9000F5381 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2280A3E4253BC9A9000F5381 /* Preview Assets.xcassets */; };
+		2280A3E9253BC9A9000F5381 /* Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 2280A3CD253BC9A8000F5381 /* Watch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2285E02524AABCAD0028E234 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2285E02324AABCAD0028E234 /* ScannerViewController.swift */; };
 		2285E02724AABCAD0028E234 /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2285E02424AABCAD0028E234 /* ScannerView.swift */; };
 		228E9CF824EFD46400016B56 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228E9CF724EFD46400016B56 /* Extensions.swift */; };
@@ -69,6 +79,20 @@
 			remoteGlobalIDString = 22655FED24B8DF0E00BC8F10;
 			remoteInfo = Safari;
 		};
+		2280A3D8253BC9A9000F5381 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22F2851A24A8E822002FDD8C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2280A3D5253BC9A9000F5381;
+			remoteInfo = "ShinyAuth Extension";
+		};
+		2280A3E7253BC9A9000F5381 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22F2851A24A8E822002FDD8C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2280A3CC253BC9A8000F5381;
+			remoteInfo = ShinyAuth;
+		};
 		22F2853724A8E823002FDD8C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 22F2851A24A8E822002FDD8C /* Project object */;
@@ -93,6 +117,28 @@
 			dstSubfolderSpec = 13;
 			files = (
 				2265600224B8DF0E00BC8F10 /* Safari.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2280A3EA253BC9A9000F5381 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				2280A3E9253BC9A9000F5381 /* Watch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2280A3ED253BC9A9000F5381 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				2280A3D7253BC9A9000F5381 /* Watch Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -133,6 +179,7 @@
 		22101BF924A8EEB000EFFD78 /* GradientText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientText.swift; sourceTree = "<group>"; };
 		22228ED424F06FEF008EF527 /* IconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
 		223DBF8F24FB3DD90066F775 /* ToolbarItemIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ToolbarItemIcon.pdf; sourceTree = "<group>"; };
+		2260297C253BCBF10095C59C /* Watch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Watch Extension.entitlements"; sourceTree = "<group>"; };
 		22655FEE24B8DF0E00BC8F10 /* Safari.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Safari.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		22655FEF24B8DF0E00BC8F10 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		22655FF224B8DF0E00BC8F10 /* SafariExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionHandler.swift; sourceTree = "<group>"; };
@@ -140,6 +187,16 @@
 		22655FFC24B8DF0E00BC8F10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SafariExtensionViewController.xib; sourceTree = "<group>"; };
 		22655FFE24B8DF0E00BC8F10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22655FFF24B8DF0E00BC8F10 /* Safari.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Safari.entitlements; sourceTree = "<group>"; };
+		2280A3CD253BC9A8000F5381 /* Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2280A3CF253BC9A8000F5381 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2280A3D1253BC9A8000F5381 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2280A3D6253BC9A9000F5381 /* Watch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Watch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2280A3DB253BC9A9000F5381 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2280A3DD253BC9A9000F5381 /* ShinyAuthApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShinyAuthApp.swift; sourceTree = "<group>"; };
+		2280A3DF253BC9A9000F5381 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		2280A3E1253BC9A9000F5381 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2280A3E4253BC9A9000F5381 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2280A3E6253BC9A9000F5381 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2285E02324AABCAD0028E234 /* ScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		2285E02424AABCAD0028E234 /* ScannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
 		228E9CF724EFD46400016B56 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -180,6 +237,14 @@
 				5996480124FB357E00E0FECB /* KingfisherSwiftUI in Frameworks */,
 				22655FF024B8DF0E00BC8F10 /* Cocoa.framework in Frameworks */,
 				59F1E1DD24F72C89002E542E /* OTPKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2280A3D3253BC9A9000F5381 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22602971253BCB0E0095C59C /* OTPKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +316,37 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		2280A3CE253BC9A8000F5381 /* Watch */ = {
+			isa = PBXGroup;
+			children = (
+				2280A3CF253BC9A8000F5381 /* Assets.xcassets */,
+				2280A3D1253BC9A8000F5381 /* Info.plist */,
+			);
+			path = Watch;
+			sourceTree = "<group>";
+		};
+		2280A3DA253BC9A9000F5381 /* Watch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				2260297C253BCBF10095C59C /* Watch Extension.entitlements */,
+				2280A3DB253BC9A9000F5381 /* ContentView.swift */,
+				2280A3DD253BC9A9000F5381 /* ShinyAuthApp.swift */,
+				2280A3DF253BC9A9000F5381 /* ComplicationController.swift */,
+				2280A3E1253BC9A9000F5381 /* Assets.xcassets */,
+				2280A3E6253BC9A9000F5381 /* Info.plist */,
+				2280A3E3253BC9A9000F5381 /* Preview Content */,
+			);
+			path = "Watch Extension";
+			sourceTree = "<group>";
+		};
+		2280A3E3253BC9A9000F5381 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				2280A3E4253BC9A9000F5381 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		22F2851924A8E822002FDD8C = {
 			isa = PBXGroup;
 			children = (
@@ -260,6 +356,8 @@
 				22655FF124B8DF0E00BC8F10 /* Safari */,
 				22F2853924A8E823002FDD8C /* Tests iOS */,
 				22F2854424A8E823002FDD8C /* Tests macOS */,
+				2280A3CE253BC9A8000F5381 /* Watch */,
+				2280A3DA253BC9A9000F5381 /* Watch Extension */,
 				22F2852724A8E822002FDD8C /* Products */,
 				22101BF624A8E94600EFFD78 /* Frameworks */,
 			);
@@ -293,6 +391,8 @@
 				22F2853624A8E823002FDD8C /* Tests iOS.xctest */,
 				22F2854124A8E823002FDD8C /* Tests macOS.xctest */,
 				22655FEE24B8DF0E00BC8F10 /* Safari.appex */,
+				2280A3CD253BC9A8000F5381 /* Watch.app */,
+				2280A3D6253BC9A9000F5381 /* Watch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -361,6 +461,43 @@
 			productReference = 22655FEE24B8DF0E00BC8F10 /* Safari.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		2280A3CC253BC9A8000F5381 /* Watch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2280A3F1253BC9A9000F5381 /* Build configuration list for PBXNativeTarget "Watch" */;
+			buildPhases = (
+				2280A3CB253BC9A8000F5381 /* Resources */,
+				2280A3ED253BC9A9000F5381 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2280A3D9253BC9A9000F5381 /* PBXTargetDependency */,
+			);
+			name = Watch;
+			productName = ShinyAuth;
+			productReference = 2280A3CD253BC9A8000F5381 /* Watch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		2280A3D5253BC9A9000F5381 /* Watch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2280A3F0253BC9A9000F5381 /* Build configuration list for PBXNativeTarget "Watch Extension" */;
+			buildPhases = (
+				2280A3D2253BC9A9000F5381 /* Sources */,
+				2280A3D3253BC9A9000F5381 /* Frameworks */,
+				2280A3D4253BC9A9000F5381 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Watch Extension";
+			packageProductDependencies = (
+				22602970253BCB0E0095C59C /* OTPKit */,
+			);
+			productName = "ShinyAuth Extension";
+			productReference = 2280A3D6253BC9A9000F5381 /* Watch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		22F2852524A8E822002FDD8C /* iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 22F2855024A8E823002FDD8C /* Build configuration list for PBXNativeTarget "iOS" */;
@@ -369,10 +506,12 @@
 				22F2852324A8E822002FDD8C /* Frameworks */,
 				22F2852424A8E822002FDD8C /* Resources */,
 				599647F124FB2CC800E0FECB /* Embed Frameworks */,
+				2280A3EA253BC9A9000F5381 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				2280A3E8253BC9A9000F5381 /* PBXTargetDependency */,
 			);
 			name = iOS;
 			packageProductDependencies = (
@@ -449,11 +588,17 @@
 		22F2851A24A8E822002FDD8C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1200;
+				LastSwiftUpdateCheck = 1220;
 				LastUpgradeCheck = 1200;
 				TargetAttributes = {
 					22655FED24B8DF0E00BC8F10 = {
 						CreatedOnToolsVersion = 12.0;
+					};
+					2280A3CC253BC9A8000F5381 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					2280A3D5253BC9A9000F5381 = {
+						CreatedOnToolsVersion = 12.2;
 					};
 					22F2852524A8E822002FDD8C = {
 						CreatedOnToolsVersion = 12.0;
@@ -493,6 +638,8 @@
 				22F2853524A8E823002FDD8C /* Tests iOS */,
 				22F2854024A8E823002FDD8C /* Tests macOS */,
 				22655FED24B8DF0E00BC8F10 /* Safari */,
+				2280A3CC253BC9A8000F5381 /* Watch */,
+				2280A3D5253BC9A9000F5381 /* Watch Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -507,6 +654,23 @@
 				223DBF9024FB3DD90066F775 /* ToolbarItemIcon.pdf in Resources */,
 				5915406124FC051700BAF1EA /* style.css in Resources */,
 				22655FFD24B8DF0E00BC8F10 /* SafariExtensionViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2280A3CB253BC9A8000F5381 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2280A3D0253BC9A8000F5381 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2280A3D4253BC9A9000F5381 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2280A3E5253BC9A9000F5381 /* Preview Assets.xcassets in Resources */,
+				2280A3E2253BC9A9000F5381 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -555,6 +719,17 @@
 				5949117B24F92AEA00957C77 /* AccountView.swift in Sources */,
 				22655FF324B8DF0E00BC8F10 /* SafariExtensionHandler.swift in Sources */,
 				59D3C40424F8874D00A7B77F /* Extensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2280A3D2253BC9A9000F5381 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2280A3DC253BC9A9000F5381 /* ContentView.swift in Sources */,
+				2280A3DE253BC9A9000F5381 /* ShinyAuthApp.swift in Sources */,
+				22602976253BCB390095C59C /* ViewModel.swift in Sources */,
+				2280A3E0253BC9A9000F5381 /* ComplicationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -623,6 +798,16 @@
 			target = 22655FED24B8DF0E00BC8F10 /* Safari */;
 			targetProxy = 2265600024B8DF0E00BC8F10 /* PBXContainerItemProxy */;
 		};
+		2280A3D9253BC9A9000F5381 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2280A3D5253BC9A9000F5381 /* Watch Extension */;
+			targetProxy = 2280A3D8253BC9A9000F5381 /* PBXContainerItemProxy */;
+		};
+		2280A3E8253BC9A9000F5381 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2280A3CC253BC9A8000F5381 /* Watch */;
+			targetProxy = 2280A3E7253BC9A9000F5381 /* PBXContainerItemProxy */;
+		};
 		22F2853824A8E823002FDD8C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 22F2852524A8E822002FDD8C /* iOS */;
@@ -690,6 +875,102 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		2280A3EB253BC9A9000F5381 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XNX7JFPP5L;
+				IBSC_MODULE = ShinyAuth_Extension;
+				INFOPLIST_FILE = Watch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = ch.gymni.Test.ShinyAuth.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
+			};
+			name = Debug;
+		};
+		2280A3EC253BC9A9000F5381 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XNX7JFPP5L;
+				IBSC_MODULE = ShinyAuth_Extension;
+				INFOPLIST_FILE = Watch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = ch.gymni.Test.ShinyAuth.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
+			};
+			name = Release;
+		};
+		2280A3EE253BC9A9000F5381 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "Watch Extension/Watch Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Watch Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = XNX7JFPP5L;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ch.gymni.Test.ShinyAuth.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
+			};
+			name = Debug;
+		};
+		2280A3EF253BC9A9000F5381 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "Watch Extension/Watch Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Watch Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = XNX7JFPP5L;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ch.gymni.Test.ShinyAuth.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 7.0;
 			};
 			name = Release;
 		};
@@ -1006,6 +1287,24 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		2280A3F0253BC9A9000F5381 /* Build configuration list for PBXNativeTarget "Watch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2280A3EE253BC9A9000F5381 /* Debug */,
+				2280A3EF253BC9A9000F5381 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2280A3F1253BC9A9000F5381 /* Build configuration list for PBXNativeTarget "Watch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2280A3EB253BC9A9000F5381 /* Debug */,
+				2280A3EC253BC9A9000F5381 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		22F2851D24A8E822002FDD8C /* Build configuration list for PBXProject "ShinyAuth" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1073,6 +1372,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		22602970253BCB0E0095C59C /* OTPKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 59BAB36624F2BE7C006E7B1F /* XCRemoteSwiftPackageReference "OTPKit" */;
+			productName = OTPKit;
+		};
 		599647F324FB2D4900E0FECB /* KingfisherSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 599647F224FB2D4900E0FECB /* XCRemoteSwiftPackageReference "Kingfisher" */;
