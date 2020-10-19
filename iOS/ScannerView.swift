@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ScannerView: View {
-    @Binding var showScanner: Bool
+    @Binding var activeSheet: SheetKind?
 
     var body: some View {
         ZStack {
@@ -19,7 +19,7 @@ struct ScannerView: View {
                     CircularButton(systemName: "xmark")
                         .padding(.all, 10)
                         .onTapGesture {
-                            showScanner = false
+                            activeSheet = nil
                         }
                     Spacer()
                 }
@@ -30,6 +30,6 @@ struct ScannerView: View {
 
 struct PageView_Preview: PreviewProvider {
     static var previews: some View {
-        ScannerView(showScanner: .constant(true))
+        ScannerView(activeSheet: .constant(.scan))
     }
 }

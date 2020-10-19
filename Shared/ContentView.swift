@@ -8,42 +8,59 @@
 import SwiftUI
 import OTPKit
 
+enum SheetKind: String, Identifiable {
+    var id: String { rawValue }
+    case scan
+    case add
+}
+
 struct ContentView: View {
     @ObservedObject var viewModel = ViewModel()
     @State private var showNewAccount = false
-    
+    @State private var activeSheet: SheetKind? = nil
     var body: some View {
         NavigationViewWrapper {
             #if os(iOS) || os(macOS)
             AccountList(viewModel: viewModel)
             .navigationTitle("Shiny")
-            .sheet(isPresented: $showNewAccount) {
+            .sheet(item: $activeSheet) {
                 withAnimation {
                     viewModel.reloadAccounts()
                 }
-                showNewAccount = false
-            } content: {
-                #if os(iOS)
-                ScannerView(showScanner: $showNewAccount).edgesIgnoringSafeArea(.bottom)
-                #elseif os(macOS)
-                NewAccountView(showNewAccount: $showNewAccount) { account in
-                    withAnimation {
-                        viewModel.addAccount(account)
+                activeSheet = nil
+            } content: { sheet in
+                switch sheet {
+                case .scan:
+                    #if os(iOS)
+                    ScannerView(activeSheet: $activeSheet).edgesIgnoringSafeArea(.bottom)
+                    #endif
+                case .add:
+                    NewAccountView(activeSheet: $activeSheet) { account in
+                        withAnimation {
+                            viewModel.addAccount(account)
+                        }
                     }
                 }
-                #endif
             }
             .toolbar {
-                ToolbarItem {
-                    Button {
-                        showNewAccount = true
-                    } label: {
-                        #if os(iOS)
-                        Image(systemName: "qrcode")
-                        #elseif os(macOS)
-                        Image(systemName: "plus")
-                        #endif
+                ToolbarItem(placement: .navigationBarLeading) {
+                    NavigationLink(destination: SettingsView()) {
+                        Image(systemName: "gear")
                     }
+                }
+                ToolbarItemGroup(placement: .navigationBarTrailing) {
+                    Button {
+                        activeSheet = .add
+                    } label: {
+                        Image(systemName: "plus")
+                    }
+                    #if os(iOS)
+                    Button {
+                        activeSheet = .scan
+                    } label: {
+                        Image(systemName: "qrcode")
+                    }
+                    #endif
                 }
             }
             .onOpenURL { url in
