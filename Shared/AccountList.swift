@@ -14,6 +14,7 @@ struct AccountList: View {
     var body: some View {
         if !viewModel.accounts.isEmpty {
             List {
+                #if os(iOS) || os(macOS)
                 ForEach(viewModel.accounts) { account in
                     AccountView(account: account)
                         .contextMenu(
@@ -28,6 +29,11 @@ struct AccountList: View {
                     let accounts = indexSet.map { viewModel.accounts[$0] }
                     accounts.forEach(viewModel.removeAccount(account:))
                 }
+                #elseif os(watchOS)
+                ForEach(viewModel.accounts) { account in
+                    WatchAccountView(account: account)
+                }
+                #endif
             }
         } else {
             Text("No Accounts").font(.title)

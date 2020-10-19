@@ -27,8 +27,6 @@
 		2265600224B8DF0E00BC8F10 /* Safari.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 22655FEE24B8DF0E00BC8F10 /* Safari.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2280A3D0253BC9A8000F5381 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2280A3CF253BC9A8000F5381 /* Assets.xcassets */; };
 		2280A3D7253BC9A9000F5381 /* Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2280A3D6253BC9A9000F5381 /* Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		2280A3DC253BC9A9000F5381 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2280A3DB253BC9A9000F5381 /* ContentView.swift */; };
-		2280A3DE253BC9A9000F5381 /* ShinyAuthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2280A3DD253BC9A9000F5381 /* ShinyAuthApp.swift */; };
 		2280A3E0253BC9A9000F5381 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2280A3DF253BC9A9000F5381 /* ComplicationController.swift */; };
 		2280A3E2253BC9A9000F5381 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2280A3E1253BC9A9000F5381 /* Assets.xcassets */; };
 		2280A3E5253BC9A9000F5381 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2280A3E4253BC9A9000F5381 /* Preview Assets.xcassets */; };
@@ -38,6 +36,10 @@
 		228E9CF824EFD46400016B56 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228E9CF724EFD46400016B56 /* Extensions.swift */; };
 		228E9CF924EFD46400016B56 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228E9CF724EFD46400016B56 /* Extensions.swift */; };
 		229A4B7A24EDCBF50086E88E /* NewAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229A4B7924EDCBF50086E88E /* NewAccountView.swift */; };
+		22BACC80253E06CD00A20FAD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F2852024A8E822002FDD8C /* ContentView.swift */; };
+		22BACC89253E070F00A20FAD /* NavigationViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594F993D24F5B1CD00B6EB71 /* NavigationViewWrapper.swift */; };
+		22BACC8E253E073700A20FAD /* ErrorAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5935670024F471850004448E /* ErrorAlert.swift */; };
+		22BACC9B253E078800A20FAD /* ShinyAuthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F2851F24A8E822002FDD8C /* ShinyAuthApp.swift */; };
 		22EFD05E24ABD16C00A208C2 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EFD05D24ABD16C00A208C2 /* AccountView.swift */; };
 		22EFD05F24ABD16C00A208C2 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EFD05D24ABD16C00A208C2 /* AccountView.swift */; };
 		22EFD06124ABD1CC00A208C2 /* CircularButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EFD06024ABD1CC00A208C2 /* CircularButton.swift */; };
@@ -199,8 +201,6 @@
 		2280A3CF253BC9A8000F5381 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2280A3D1253BC9A8000F5381 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2280A3D6253BC9A9000F5381 /* Watch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Watch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2280A3DB253BC9A9000F5381 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		2280A3DD253BC9A9000F5381 /* ShinyAuthApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShinyAuthApp.swift; sourceTree = "<group>"; };
 		2280A3DF253BC9A9000F5381 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		2280A3E1253BC9A9000F5381 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2280A3E4253BC9A9000F5381 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -337,9 +337,7 @@
 			isa = PBXGroup;
 			children = (
 				2260297C253BCBF10095C59C /* Watch Extension.entitlements */,
-				2280A3DB253BC9A9000F5381 /* ContentView.swift */,
 				222C8D76253DBE030073C430 /* WatchAccountView.swift */,
-				2280A3DD253BC9A9000F5381 /* ShinyAuthApp.swift */,
 				2280A3DF253BC9A9000F5381 /* ComplicationController.swift */,
 				2280A3E1253BC9A9000F5381 /* Assets.xcassets */,
 				2280A3E6253BC9A9000F5381 /* Info.plist */,
@@ -736,9 +734,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2280A3DC253BC9A9000F5381 /* ContentView.swift in Sources */,
+				22BACC89253E070F00A20FAD /* NavigationViewWrapper.swift in Sources */,
+				22BACC8E253E073700A20FAD /* ErrorAlert.swift in Sources */,
+				22BACC80253E06CD00A20FAD /* ContentView.swift in Sources */,
 				222C8D77253DBE030073C430 /* WatchAccountView.swift in Sources */,
-				2280A3DE253BC9A9000F5381 /* ShinyAuthApp.swift in Sources */,
 				222C8D57253D00680073C430 /* GradientText.swift in Sources */,
 				22602976253BCB390095C59C /* ViewModel.swift in Sources */,
 				222C8D7D253DC1A20073C430 /* SettingsView.swift in Sources */,
@@ -746,6 +745,7 @@
 				222C8D61253D03C60073C430 /* AccountList.swift in Sources */,
 				222C8D52253D00550073C430 /* AccountView.swift in Sources */,
 				222C8D5C253D007A0073C430 /* Extensions.swift in Sources */,
+				22BACC9B253E078800A20FAD /* ShinyAuthApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

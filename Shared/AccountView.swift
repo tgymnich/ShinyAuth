@@ -45,19 +45,19 @@ struct AccountView: View {
             }
             Spacer()
             VStack {
+                #if os(macOS) || os(iOS)
                 if !showCopiedMessage {
-                    #if os(macOS) || os(iOS)
                     codeView.onDrag {
                         return NSItemProvider(object: account.otpGenerator.code() as NSString)
                     }
-                    #else
-                    codeView
-                    #endif
                 } else {
                     GradientText("copied!", colors: [.yellow, .red, .orange], progress: 0)
                         .font(.body)
                         .transition(.slide)
                 }
+                #else
+                codeView
+                #endif
             }
         }.padding(.vertical, 8)
     }

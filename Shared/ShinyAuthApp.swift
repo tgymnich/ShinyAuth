@@ -14,8 +14,12 @@ struct ShinyAuthApp: App {
     
     var body: some Scene {
         WindowGroup {
+            #if os(iOS) || os(macOS)
             ContentView()
                 .frame(minWidth: 300, idealWidth: 400, maxWidth: .infinity, minHeight: 200, idealHeight: 500, maxHeight: .infinity, alignment: .center)
+            #elseif os(watchOS)
+            ContentView()
+            #endif
         }
         #if os(macOS)
         Settings {

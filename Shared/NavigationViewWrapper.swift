@@ -15,12 +15,12 @@ struct NavigationViewWrapper<Content: View>: View {
     }
     
     var body: some View {
-        #if os(macOS)
-        content()
-        #else
+        #if os(iOS)
         NavigationView {
             content()
         }.navigationViewStyle(StackNavigationViewStyle())
+        #else
+        content()
         #endif
     }
 }

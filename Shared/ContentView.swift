@@ -14,6 +14,7 @@ struct ContentView: View {
     
     var body: some View {
         NavigationViewWrapper {
+            #if os(iOS) || os(macOS)
             AccountList(viewModel: viewModel)
             .navigationTitle("Shiny")
             .sheet(isPresented: $showNewAccount) {
@@ -24,7 +25,7 @@ struct ContentView: View {
             } content: {
                 #if os(iOS)
                 ScannerView(showScanner: $showNewAccount).edgesIgnoringSafeArea(.bottom)
-                #else
+                #elseif os(macOS)
                 NewAccountView(showNewAccount: $showNewAccount) { account in
                     withAnimation {
                         viewModel.addAccount(account)
@@ -39,7 +40,7 @@ struct ContentView: View {
                     } label: {
                         #if os(iOS)
                         Image(systemName: "qrcode")
-                        #else
+                        #elseif os(macOS)
                         Image(systemName: "plus")
                         #endif
                     }
@@ -52,6 +53,9 @@ struct ContentView: View {
                 viewModel.reloadAccounts()
             }
             .emittingError(viewModel.error, errorHandler: viewModel.resetError)
+            #elseif os(watchOS)
+            AccountList(viewModel: viewModel)
+            #endif
         }
     }
 }
