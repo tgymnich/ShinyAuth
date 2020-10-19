@@ -9,12 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject var viewModel = ViewModel()
+
     var body: some View {
-        VStack {
-            List {
-                ForEach(viewModel.accounts) { account in
-                    AccountView(account: account)
-                }
+        List {
+            ForEach(viewModel.accounts) { account in
+                WatchAccountView(account: account)
             }
         }
     }

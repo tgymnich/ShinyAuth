@@ -6,10 +6,10 @@
 //
 
 import SwiftUI
+import OTPKit
 #if canImport(KingfisherSwiftUI)
 import KingfisherSwiftUI
 #endif
-import OTPKit
 
 struct AccountView: View {
     let account: Account<TOTP>
