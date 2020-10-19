@@ -24,6 +24,7 @@ struct AccountView: View {
                 .cancelOnDisappear(true)
                 .placeholder {
                     IconView(text: account.issuer ?? account.label)
+                        .frame(width: 44, height: 44)
                 }
                 .resizable()
                 .aspectRatio(contentMode: .fit)
