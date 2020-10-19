@@ -16,6 +16,7 @@
 		222C8D5C253D007A0073C430 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228E9CF724EFD46400016B56 /* Extensions.swift */; };
 		222C8D61253D03C60073C430 /* AccountList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593566FD24F46E3A0004448E /* AccountList.swift */; };
 		222C8D77253DBE030073C430 /* WatchAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222C8D76253DBE030073C430 /* WatchAccountView.swift */; };
+		222C8D7D253DC1A20073C430 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222C8D7C253DC1A20073C430 /* SettingsView.swift */; };
 		223DBF9024FB3DD90066F775 /* ToolbarItemIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 223DBF8F24FB3DD90066F775 /* ToolbarItemIcon.pdf */; };
 		22602971253BCB0E0095C59C /* OTPKit in Frameworks */ = {isa = PBXBuildFile; productRef = 22602970253BCB0E0095C59C /* OTPKit */; };
 		22602976253BCB390095C59C /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5908383E24F5D71A00AEC7E8 /* ViewModel.swift */; };
@@ -184,6 +185,7 @@
 		22101BF924A8EEB000EFFD78 /* GradientText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientText.swift; sourceTree = "<group>"; };
 		22228ED424F06FEF008EF527 /* IconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
 		222C8D76253DBE030073C430 /* WatchAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchAccountView.swift; sourceTree = "<group>"; };
+		222C8D7C253DC1A20073C430 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		223DBF8F24FB3DD90066F775 /* ToolbarItemIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ToolbarItemIcon.pdf; sourceTree = "<group>"; };
 		2260297C253BCBF10095C59C /* Watch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Watch Extension.entitlements"; sourceTree = "<group>"; };
 		22655FEE24B8DF0E00BC8F10 /* Safari.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Safari.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -385,6 +387,7 @@
 				5935670024F471850004448E /* ErrorAlert.swift */,
 				594F993D24F5B1CD00B6EB71 /* NavigationViewWrapper.swift */,
 				5908383E24F5D71A00AEC7E8 /* ViewModel.swift */,
+				222C8D7C253DC1A20073C430 /* SettingsView.swift */,
 				22F2852124A8E822002FDD8C /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -738,6 +741,7 @@
 				2280A3DE253BC9A9000F5381 /* ShinyAuthApp.swift in Sources */,
 				222C8D57253D00680073C430 /* GradientText.swift in Sources */,
 				22602976253BCB390095C59C /* ViewModel.swift in Sources */,
+				222C8D7D253DC1A20073C430 /* SettingsView.swift in Sources */,
 				2280A3E0253BC9A9000F5381 /* ComplicationController.swift in Sources */,
 				222C8D61253D03C60073C430 /* AccountList.swift in Sources */,
 				222C8D52253D00550073C430 /* AccountView.swift in Sources */,
