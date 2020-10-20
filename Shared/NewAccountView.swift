@@ -20,8 +20,22 @@ struct NewAccountView: View {
     var onDismiss: ((Account<TOTP>) -> Void)?
 
     var body: some View {
+        #if os(iOS)
+        navigationView
+        #else
+        navigationView
+            .padding()
+            .frame(width: 350, height: 250, alignment: .center)
+        #endif
+    }
+    
+    var navigationView: some View {
         NavigationViewWrapper {
             Form {
+                #if os(macOS)
+                Text("Add New Account").font(.title2)
+                Spacer()
+                #endif
                 Section(header: Text("URL")) {
                     TextField("URL", text: $urlString)
                 }
@@ -32,17 +46,29 @@ struct NewAccountView: View {
                         AccountDetail.placeholder
                     }
                 }
+                HStack {
+                    Spacer()
+                        Button("Cancel") {
+                            activeSheet = nil
+                        }
+                        Button("OK") {
+                            if let account = account {
+                                onDismiss?(account)
+                            }
+                            activeSheet = nil
+                        }.disabled(account == nil)
+                    }
             }
             .navigationTitle("Add New Account")
             .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
+                ToolbarItem(placement: .cancellationAction) {
                     Button(action: {
                         activeSheet = nil
                     }) {
                         Text("Cancel")
                     }
                 }
-                ToolbarItem(placement: .navigationBarTrailing) {
+                ToolbarItem(placement: .confirmationAction) {
                     Button(action: {
                         if let account = account {
                             onDismiss?(account)

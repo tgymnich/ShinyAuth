@@ -24,6 +24,8 @@ struct ShinyAuthApp: App {
         #if os(macOS)
         Settings {
             SettingsView()
+                .padding(20)
+                .frame(width: 350, height: 200)
         }
         #endif
     }

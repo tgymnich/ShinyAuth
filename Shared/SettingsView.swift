@@ -11,6 +11,9 @@ struct SettingsView: View {
     var body: some View {
         Form {
             Section {
+                #if os(macOS)
+                Spacer()
+                #endif
                 HStack {
                     Image(systemName: "printer")
                         .foregroundColor(.white)
@@ -24,6 +27,9 @@ struct SettingsView: View {
                         )
                     Text("Backup")
                 }
+                #if os(macOS)
+                Spacer()
+                #endif
                 HStack {
                         Image(systemName: "envelope")
                             .frame(width: 24, height: 24)
@@ -38,6 +44,9 @@ struct SettingsView: View {
 
                     Text("Feedback")
                 }
+                #if os(macOS)
+                Spacer()
+                #endif
                 HStack {
                         Image(systemName: "info.circle")
                             .frame(width: 24, height: 24)
@@ -56,6 +65,9 @@ struct SettingsView: View {
 
                 }
             }
+            #if os(macOS)
+            Spacer()
+            #endif
         }.navigationTitle("Settings")
     }
 }

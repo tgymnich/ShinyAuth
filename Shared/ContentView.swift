@@ -43,6 +43,7 @@ struct ContentView: View {
                 }
             }
             .toolbar {
+                #if os(iOS)
                 ToolbarItem(placement: .navigationBarLeading) {
                     NavigationLink(destination: SettingsView()) {
                         Image(systemName: "gear")
@@ -54,14 +55,21 @@ struct ContentView: View {
                     } label: {
                         Image(systemName: "plus")
                     }
-                    #if os(iOS)
                     Button {
                         activeSheet = .scan
                     } label: {
                         Image(systemName: "qrcode")
                     }
-                    #endif
                 }
+                #elseif os(macOS)
+                ToolbarItem {
+                    Button {
+                        activeSheet = .add
+                    } label: {
+                        Image(systemName: "plus")
+                    }
+                }
+                #endif
             }
             .onOpenURL { url in
                 viewModel.addAccount(url: url)
