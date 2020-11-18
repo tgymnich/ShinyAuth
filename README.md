@@ -1,4 +1,4 @@
-![slice1](https://user-images.githubusercontent.com/7985149/99601541-e4fb3600-29ff-11eb-84a0-cfba0b3234e0.png)
+![slice1@3x](https://user-images.githubusercontent.com/7985149/99601893-a31ebf80-2a00-11eb-9aa7-33eb71041516.png)
 
 # Shiny Auth
 
