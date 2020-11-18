@@ -1,3 +1,5 @@
+![slice1](https://user-images.githubusercontent.com/7985149/99601541-e4fb3600-29ff-11eb-84a0-cfba0b3234e0.png)
+
 # Shiny Auth
 
 Cross platform two-factor authentication powered by SwiftUI.
@@ -5,9 +7,11 @@ Cross platform two-factor authentication powered by SwiftUI.
 # Screenshots
 
 ## macOS
-
-<img width="600" alt="Screenshot 2020-08-19 at 23 43 33" src="https://user-images.githubusercontent.com/7985149/90692719-df157d80-e275-11ea-8d1a-037e1683f04d.png">
+<img width="600" alt="Screen Shot 2020-11-19 at 00 36 16" src="https://user-images.githubusercontent.com/7985149/99601662-225fc380-2a00-11eb-8444-763a7e8ecc68.png">
 
 ## iOS
 
-<img width="300" alt="Screenshot 2020-08-19 at 23 43 33" src="https://user-images.githubusercontent.com/7985149/90694325-bf338900-e278-11ea-801e-953360d97c61.png">
+<img width="300" alt="Screenshot 2020-08-19 at 23 43 33" src="https://user-images.githubusercontent.com/7985149/99601671-2855a480-2a00-11eb-88af-d69edffa9291.png">
+
+## Safari
+<img width="1552" alt="Screen Shot 2020-11-19 at 00 25 30" src="https://user-images.githubusercontent.com/7985149/99601666-24c21d80-2a00-11eb-87e6-2652073f43a5.png">
