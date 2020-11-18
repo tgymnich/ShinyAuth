@@ -1,6 +1,6 @@
 # Shiny Auth
 
-🚧 2FA App
+Cross platform two-factor authentication powered by SwiftUI.
 
 # Screenshots
 
