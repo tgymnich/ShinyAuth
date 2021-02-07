@@ -17,10 +17,10 @@ jobs:
         key: ${{ runner.os }}-spm-v2-${{ hashFiles('**/Package.resolved') }}
         restore-keys: ${{ runner.os }}-spm-v2-
     - name: Build iOS
-      run:  xcodebuild -scheme "iOS"  -clonedSourcePackagesDirPath .cache -destination "generic/platform=iOS"
+      run:  xcodebuild -scheme "iOS"  -clonedSourcePackagesDirPath .cache
     - name: Build macOS
-      run:  xcodebuild -scheme "macOS"  -clonedSourcePackagesDirPath .cache -destination "generic/platform=macOS"
+      run:  xcodebuild -scheme "macOS"  -clonedSourcePackagesDirPath .cache
     - name: Build Safari
-      run:  xcodebuild -scheme "iOS"  -clonedSourcePackagesDirPath .cache -destination "generic/platform=macOS"
+      run:  xcodebuild -scheme "iOS"  -clonedSourcePackagesDirPath .cache
     - name: Build watchOS
-      run:  xcodebuild -scheme "Watch"  -clonedSourcePackagesDirPath .cache -destination "generic/platform=watchOS"
+      run:  xcodebuild -scheme "Watch"  -clonedSourcePackagesDirPath .cache
